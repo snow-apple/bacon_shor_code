@@ -68,6 +68,27 @@ def check_config_row(grid):
     else:
         return False
 
+'''Takes in a grid and a list of indexes on the grid and outputs the stabilizer measurement, 1 or -1'''
+def check_stabilizer(grid, positions):
+    d = len(grid)
+    boolean = False
+
+    for p in positions:
+        row = (p)//d
+        col = (p)%3
+        # print(str(row) + ", "+ str(col)+ ": "+str(grid[row][col]))
+        boolean = boolean ^ grid[row][col]
+    if boolean == False:
+        return 1
+    else:
+        return -1
+
+
+
+    
+
+  
+
 '''takes in grid and a list of positions where to place y logicals
 and inserts True in those positions'''
 def add_y_error(grid,positions):
