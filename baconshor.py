@@ -3,6 +3,7 @@ from itertools import product
 from tabulate import tabulate
 import itertools
 from itertools import combinations
+import random
 
 #false is no why y logical
 def create_grid(distance):
@@ -18,6 +19,12 @@ def Print(grid):
             else:
                 print("0", end=" ")
         print()
+def Print_Solver(d,predicted):
+    for i in range(d):
+        for j in range(d):
+            print(int(predicted[i * d + j][0]), end=" ")
+        print()
+
 
 '''uses check_config_row and check_config_col to evaluate whether
 the configuration is possible'''
@@ -100,22 +107,40 @@ def add_y_error(grid,positions):
             # print(row,col)
             grid[row][col] = True
 
-def list_of_grids2(d, weight, printgrid=False):
-    possible_weight_locations = list(combinations(list(range(1, (d**2)+1)),weight))
-    possible_grids = []
-    num_of_possible_grids=0
-    for i in range(len(possible_weight_locations)):
-        newlist = list(possible_weight_locations[i])
-        newgrid = create_grid(d)
-        add_y_error(newgrid, newlist)
-        if(check_config(newgrid)):
-            num_of_possible_grids += 1
-            possible_grids.append(newgrid)
-            if(printgrid):
-                Print(newgrid)
-                print()
-    return num_of_possible_grids
+# def list_of_grids2(d, weight, printgrid=False):
+#     possible_weight_locations = list(combinations(list(range(1, (d**2)+1)),weight))
+#     possible_grids = []
+#     num_of_possible_grids=0
+#     for i in range(len(possible_weight_locations)):
+#         newlist = list(possible_weight_locations[i])
+#         newgrid = create_grid(d)
+#         add_y_error(newgrid, newlist)
+#         if(check_config(newgrid)):
+#             num_of_possible_grids += 1
+#             possible_grids.append(newgrid)
+#             if(printgrid):
+#                 Print(newgrid)
+#                 print()
+#     return num_of_possible_grids
     
+def list_of_grids2(d, weight, breakupint, printgrid=False):
+    num_of_possible_grids = 0
+    iterator = 0
+    for possible_weight_location in combinations(range(1, (d**2) + 1), weight):
+        this_lowlim = breakupint * 6e7
+        this_highlim = this_lowlim + 6e7
+        if iterator >= this_lowlim and iterator < this_highlim:
+            newlist = list(possible_weight_location)
+            newgrid = create_grid(d)
+            add_y_error(newgrid, newlist)
+            if check_config(newgrid):
+                num_of_possible_grids += 1
+                if printgrid:
+                    print(newgrid)
+                    print()
+        iterator+=1
+        if iterator >= this_highlim: return num_of_possible_grids
+    return num_of_possible_grids
 
 '''creates all possible grids for combinations of True and False
 for any distance'''
@@ -207,8 +232,47 @@ def table(d, list_of_weights):
         print("{:<10} {:<10}".format(weight, num_of_combinations))
     
 
+'''creates a grid that adds an error on every position with probability p '''
+def random_error_grid(d,p):
+    grid = create_grid(d)
+    list1 = list(range(1, d**2+1))
+    # print(list1)
+    #where to add y errors
+    error_list = []
+    for i in range(len(list1)):
+        # print("hi")
+        if random.random() < p:
+            error_list.append(list1[i])
+    # print(error_list)
+    add_y_error(grid,error_list)
+    return grid
 
+'''Create a dictionary of stabilizer measurements that gives the syndrome for each neighboring row and column'''
+def construct_stabilizers(d, grid):
+    total = []
+    for i in range(d-1):
+        listrow=[]
+        listcol=[]
+        for q in range(d):
+            listrow.append(d*i +q)
+            listrow.append((d)*(i+1) + q)
+            listcol.append(d*q +i)
+            listcol.append(d*q +(i+1))
+        total.append(listrow)
+        total.append(listcol) 
+    Cs = {}# stabilizer check values, these are the measured stabilizer values
+    for l in total:
+        Cs[tuple(l)] = check_stabilizer(grid, l)
+    return Cs
 
+'''takes in the original error grid we created and compares it to the dictionary of errors the MLE solver prediccted'''
+def solver_accuracy(d, grid, predicted):
+    count = 0
+    for i in range(d):
+        for j in range(d):
+            if grid[i][j] != int(predicted[i * d + j][0]):
+                count+=1
+    return(count ==0)
 
 
 
