@@ -5,7 +5,7 @@ import itertools
 from itertools import combinations
 import random
 
-#false is no why y logical
+#false is no why y error
 def create_grid(distance):
     grid = [[False for _ in range(distance)] for _ in range(distance)]
     return grid
@@ -265,14 +265,27 @@ def construct_stabilizers(d, grid):
         Cs[tuple(l)] = check_stabilizer(grid, l)
     return Cs
 
-'''takes in the original error grid we created and compares it to the dictionary of errors the MLE solver prediccted'''
-def solver_accuracy(d, grid, predicted):
-    count = 0
+'''adds two grids using mod 2 addition'''
+def add_grids(d, grid1, grid2):
+    summed = [[0 for x in range(d)] for y in range(d)] 
     for i in range(d):
         for j in range(d):
-            if grid[i][j] != int(predicted[i * d + j][0]):
-                count+=1
-    return(count ==0)
+            summed[i][j] = (grid1[i][j] + grid2[i][j]) % 2
+    return summed
+
+
+'''
+checks is a logical error occurred by "adding" the error grid we created and 
+the predicted error grid the MLE solver predicted. There is no logical error
+if in the summed grid there is an even # of errors and if all the stabilizers 
+are 1
+'''
+def solver_accuracy(d, grid, predicted):
+    #edit this with the ylogical thing
+    sum = add_grids(grid, predicted)
+    num_y_errors = count_y_errors(sum)
+    return(num_y_errors % 2 == 0 and check_config(sum))
+
 
 
 
