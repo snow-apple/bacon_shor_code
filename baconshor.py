@@ -4,6 +4,7 @@ from tabulate import tabulate
 import itertools
 from itertools import combinations
 import random
+import matplotlib.pyplot as plt
 
 #false is no why y error
 def create_grid(distance):
@@ -18,11 +19,6 @@ def Print(grid):
                 print("1", end=" ")
             else:
                 print("0", end=" ")
-        print()
-def Print_Solver(d,predicted):
-    for i in range(d):
-        for j in range(d):
-            print(int(predicted[i * d + j][0]), end=" ")
         print()
 
 
@@ -265,6 +261,15 @@ def construct_stabilizers(d, grid):
         Cs[tuple(l)] = check_stabilizer(grid, l)
     return Cs
 
+def solver_to_grid(d, solver_output):
+    grid = [[0 for x in range(d)] for y in range(d)] 
+    for i in range(d):
+        for j in range(d):
+            grid[i][j] = int(solver_output[i * d + j][0])
+    return grid
+
+
+
 '''adds two grids using mod 2 addition'''
 def add_grids(d, grid1, grid2):
     summed = [[0 for x in range(d)] for y in range(d)] 
@@ -282,10 +287,15 @@ are 1
 '''
 def solver_accuracy(d, grid, predicted):
     #edit this with the ylogical thing
-    sum = add_grids(grid, predicted)
+    sum = add_grids(d, grid, predicted)
     num_y_errors = count_y_errors(sum)
     return(num_y_errors % 2 == 0 and check_config(sum))
 
 
-
-
+def plot(physical, logical):
+    fig,ax = plt.subplots(1,1,dpi=200,figsize = (4,3))
+    ax.plot(physical,logical)
+    ax.legend(fontsize=6)
+    ax.set_xlabel("Physical Error Rate (p)")
+    ax.set_ylabel("Logical Error Rate")
+    plt.plot()
