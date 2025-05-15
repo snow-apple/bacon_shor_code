@@ -78,7 +78,7 @@ def check_stabilizer(grid, positions):
 
     for p in positions:
         row = (p)//d
-        col = (p)%3
+        col = (p)%d
         # print(str(row) + ", "+ str(col)+ ": "+str(grid[row][col]))
         boolean = boolean ^ grid[row][col]
     if boolean == False:
@@ -132,7 +132,7 @@ def list_of_grids2(d, weight, breakupint, printgrid=False):
             if check_config(newgrid):
                 num_of_possible_grids += 1
                 if printgrid:
-                    print(newgrid)
+                    Print(newgrid)
                     print()
         iterator+=1
         if iterator >= this_highlim: return num_of_possible_grids
@@ -218,7 +218,7 @@ def table(d, list_of_weights):
     dict_to_table = {}
     count = 0
     for w in list_of_weights:
-        num = list_of_grids2(d,w, False)
+        num = list_of_grids2(d,w, True)
         dict_to_table[count] = [str(w), str(num)]
         count +=1
     print("d="+str(d)+":\n")
@@ -244,6 +244,7 @@ def random_error_grid(d,p):
     return grid
 
 '''Create a dictionary of stabilizer measurements that gives the syndrome for each neighboring row and column'''
+#used for gekko decoder
 def construct_stabilizers(d, grid):
     total = []
     for i in range(d-1):
@@ -261,6 +262,28 @@ def construct_stabilizers(d, grid):
         Cs[tuple(l)] = check_stabilizer(grid, l)
     return Cs
 
+#for scipy decoder
+def construct_stabilizers_scipy(d, grid):
+    total = []
+    for i in range(d-1):
+        listrow=[]
+        listcol=[]
+        for q in range(d):
+            listrow.append(d*i +q)
+            listrow.append((d)*(i+1) + q)
+            listcol.append(d*q +i)
+            listcol.append(d*q +(i+1))
+        total.append(listrow)
+        total.append(listcol) 
+    # Cs = {}# stabilizer check values, these are the measured stabilizer values
+    I = []
+    C = []
+    for l in total:
+        I.append(l)
+        C.append(check_stabilizer(grid, l))
+    return I, C
+
+#for gekko
 def solver_to_grid(d, solver_output):
     grid = [[0 for x in range(d)] for y in range(d)] 
     for i in range(d):
@@ -268,6 +291,13 @@ def solver_to_grid(d, solver_output):
             grid[i][j] = int(solver_output[i * d + j][0])
     return grid
 
+#for scipy - changed because scipy output of the guess is different than gekko's
+def solver_to_grid_scipy(d, solver_output):
+    grid = [[0 for x in range(d)] for y in range(d)] 
+    for i in range(d):
+        for j in range(d):
+            grid[i][j] = solver_output[i * d + j]
+    return grid
 
 
 '''adds two grids using mod 2 addition'''
