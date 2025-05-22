@@ -321,11 +321,39 @@ def solver_accuracy(d, grid, predicted):
     num_y_errors = count_y_errors(sum)
     return(num_y_errors % 2 == 0 and check_config(sum))
 
-
-def plot(physical, logical):
+def plot(physical, logical,low_lim, high_lim, title="",  error_bars=None):
     fig,ax = plt.subplots(1,1,dpi=200,figsize = (4,3))
-    ax.plot(physical,logical)
+    if error_bars is not None:
+        ax.errorbar(physical, logical, yerr=error_bars, capsize=3)
+    else:
+        ax.plot(physical, logical)
+
     ax.legend(fontsize=6)
+    ax.set_ylim(low_lim, high_lim)
+    ax.set_xlim(low_lim, high_lim)
     ax.set_xlabel("Physical Error Rate (p)")
     ax.set_ylabel("Logical Error Rate")
-    plt.plot()
+    plt.title(title)
+
+def plot_multiple(distances, physical, logical,low_lim, high_lim, title="",  error_bars=None):
+    fig,ax = plt.subplots(1,1,dpi=200,figsize = (4,3))
+    if error_bars is not None:
+        for d, log, bars in zip(distances, logical, error_bars):
+            ax.errorbar(physical, log, yerr=bars, capsize=3, label=f"d={d}")
+    else:
+        for d, log in zip(distances, logical):
+            ax.plot(physical, log, label=f"d={d}")
+
+    ax.legend(fontsize=6)
+    ax.set_ylim(low_lim, high_lim)
+    ax.set_xlim(low_lim, high_lim)
+    ax.set_xlabel("Physical Error Rate (p)")
+    ax.set_ylabel("Logical Error Rate")
+    plt.title(title)
+
+
+def add_to_csv():
+    return
+
+def print_from_csv():
+    return 0
