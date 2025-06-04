@@ -352,30 +352,9 @@ def plot_multiple(distances, physical, logical,low_lim, high_lim, title="",  err
     ax.set_ylabel("Logical Error Rate")
     plt.title(title)
 
-#for scipy data collection, doesn't properly parse the error bars
-def print_from_csv_scipy(title):
-    #Distance,Physical Error Probability,Logical Error Probability,Error Bar
-    distances=[]
-    phys_probs={}
-    log_probs = {}
-    with open(title, "r") as f:
-        for line in f:
-            d, phys, log, error = line.strip().split(",")
-            d = int(d)
-            phys, log, error = float(phys), float(log), float(error)
-            if d not in distances:
-                distances.append(d)  # Keep track of first appearance order
-                phys_probs[d] = []
-                log_probs[d] = []
-            phys_probs[d].append(phys)
-            log_probs[d].append(log)
-            
-    phys_lists = [phys_probs[d] for d in distances]
-    log_lists = [log_probs[d] for d in distances]
-    return phys_lists, log_lists, distances
-
-def print_from_csv_pm(title):
-    #Distance,Physical Error Probability,Logical Error Probability,Error Bar
+#for scipy data collection, doesn't include the error bars
+def print_from_csv(title):
+    #Distance,Physical Error Probability, errors, shots
     distances=[]
     phys_probs={}
     log_probs = {}
@@ -394,3 +373,42 @@ def print_from_csv_pm(title):
     phys_lists = [phys_probs[d] for d in distances]
     log_lists = [log_probs[d] for d in distances]
     return phys_lists, log_lists, distances
+
+    # distances=[]
+    # phys_probs={}
+    # log_probs = {}
+    # with open(title, "r") as f:
+    #     for line in f:
+    #         d, phys, log, error = line.strip().split(",")
+    #         d = int(d)
+    #         phys, log, error = float(phys), float(log), float(error)
+    #         if d not in distances:
+    #             distances.append(d)  # Keep track of first appearance order
+    #             phys_probs[d] = []
+    #             log_probs[d] = []
+    #         phys_probs[d].append(phys)
+    #         log_probs[d].append(log)
+            
+    # phys_lists = [phys_probs[d] for d in distances]
+    # log_lists = [log_probs[d] for d in distances]
+    # return phys_lists, log_lists, distances
+
+# def print_from_csv_pm(title):
+#     distances=[]
+#     phys_probs={}
+#     log_probs = {}
+#     with open(title, "r") as f:
+#         for line in f:
+#             d, phys, count, shots = line.strip().split()
+#             d = int(d)
+#             phys, count, shots = float(phys), int(count), int(shots)
+#             if d not in distances:
+#                 distances.append(d)  # Keep track of first appearance order
+#                 phys_probs[d] = []
+#                 log_probs[d] = []
+#             phys_probs[d].append(phys)
+#             log_probs[d].append(count/shots)
+            
+#     phys_lists = [phys_probs[d] for d in distances]
+#     log_lists = [log_probs[d] for d in distances]
+#     return phys_lists, log_lists, distances

@@ -133,8 +133,8 @@ for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates o
                 guess = print_result(*mle_decoder_bs(M**2,I,C,p))
                 if(baconshor.solver_accuracy(M,grid,baconshor.solver_to_grid_scipy(M,guess)) != True):
                     count+=1
-            log_error_prob = count/shots
-            std = np.sqrt(log_error_prob * (1 - log_error_prob) / shots)
-            print(M, p, log_error_prob, std, sep=",", file=file)
+            # log_error_prob = count/shots
+            # std = np.sqrt(log_error_prob * (1 - log_error_prob) / shots)
+            print(M, p, count, shots, sep=",", file=file)
 
 
