@@ -335,11 +335,11 @@ def plot(physical, logical,low_lim, high_lim, title="",  error_bars=None):
     ax.set_ylabel("Logical Error Rate")
     plt.title(title)
 
-def plot_multiple(distances, physical, logical,low_lim, high_lim, title="",  error_bars=None):
+def plot_multiple(distances, physical, logical,low_lim, high_lim, decoder, title="", error_bars=None):
     fig,ax = plt.subplots(1,1,dpi=200,figsize = (4,3))
     if error_bars is not None:
         for d, log, bars in zip(distances, logical, error_bars):
-            ax.errorbar(physical, log, yerr=bars, capsize=3, label=f"d={d}")
+            ax.errorbar(physical, log, yerr=bars, capsize=3, label=f"{decoder} d={d}")
     else:
         for d, log in zip(distances, logical):
             ax.plot(physical, log, label=f"d={d}")
