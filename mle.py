@@ -135,6 +135,6 @@ for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates o
                     count+=1
             # log_error_prob = count/shots
             # std = np.sqrt(log_error_prob * (1 - log_error_prob) / shots)
-            print(M, p, count, shots, sep=",", file=file)
+            print(M, p, count, shots, sep=" ", file=file)
 
 

@@ -352,6 +352,31 @@ def plot_multiple(distances, physical, logical,low_lim, high_lim, title="",  err
     ax.set_ylabel("Logical Error Rate")
     plt.title(title)
 
+def combine_parallel_data(num_files, file_prefix, file_suffix, output_file):
+    files = [open(f"{file_prefix}{i}{file_suffix}", "r") for i in range(1, num_files + 1)]
+    output = open(output_file, "a")
+
+    # Process all lines together
+    for lines in zip(*files):
+        d, p, _, _ = lines[0].strip().split()
+        d = int(d)
+        p = float(p)
+
+        total_count = 0
+        total_shots = 0
+
+        for line in lines:
+            _, _, count, shots = line.strip().split()
+            total_count += int(count)
+            total_shots += int(shots)
+
+        output.write(f"{d} {p} {total_count} {total_shots}\n")
+
+# Close files
+for f in files:
+    f.close()
+output.close()
+
 #for scipy data collection, doesn't include the error bars
 def print_from_csv(title):
     #Distance,Physical Error Probability, errors, shots
