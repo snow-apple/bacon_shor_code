@@ -103,21 +103,21 @@ def add_y_error(grid,positions):
             # print(row,col)
             grid[row][col] = True
 
-# def list_of_grids2(d, weight, printgrid=False):
-#     possible_weight_locations = list(combinations(list(range(1, (d**2)+1)),weight))
-#     possible_grids = []
-#     num_of_possible_grids=0
-#     for i in range(len(possible_weight_locations)):
-#         newlist = list(possible_weight_locations[i])
-#         newgrid = create_grid(d)
-#         add_y_error(newgrid, newlist)
-#         if(check_config(newgrid)):
-#             num_of_possible_grids += 1
-#             possible_grids.append(newgrid)
-#             if(printgrid):
-#                 Print(newgrid)
-#                 print()
-#     return num_of_possible_grids
+def list_of_grids3(d, weight, printgrid=False):
+    possible_weight_locations = list(combinations(list(range(1, (d**2)+1)),weight))
+    possible_grids = []
+    num_of_possible_grids=0
+    for i in range(len(possible_weight_locations)):
+        newlist = list(possible_weight_locations[i])
+        newgrid = create_grid(d)
+        add_y_error(newgrid, newlist)
+        if(check_config(newgrid)):
+            num_of_possible_grids += 1
+            possible_grids.append(newgrid)
+            if(printgrid):
+                Print(newgrid)
+                print()
+    return num_of_possible_grids
     
 def list_of_grids2(d, weight, breakupint, printgrid=False):
     num_of_possible_grids = 0
