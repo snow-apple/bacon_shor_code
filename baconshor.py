@@ -372,10 +372,10 @@ def combine_parallel_data(num_files, file_prefix, file_suffix, output_file):
 
         output.write(f"{d} {p} {total_count} {total_shots}\n")
 
-# Close files
-for f in files:
-    f.close()
-output.close()
+    # Close files
+    for f in files:
+        f.close()
+    output.close()
 
 #for scipy data collection, doesn't include the error bars
 def print_from_csv(title):

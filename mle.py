@@ -123,7 +123,7 @@ if n != 9:
 
 for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates over d values
     filename = sys.argv[8] + ".txt"
-    with open(filename, "w") as file:
+    with open(filename, "a") as file:
         for p in np.arange(float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6])):#iterates over p values
             count = 0
             shots = int(sys.argv[7])
