@@ -123,8 +123,8 @@ def list_of_grids2(d, weight, breakupint, printgrid=False):
     num_of_possible_grids = 0
     iterator = 0
     for possible_weight_location in combinations(range(1, (d**2) + 1), weight):
-        this_lowlim = breakupint * 6e7
-        this_highlim = this_lowlim + 6e7
+        this_lowlim = breakupint * 6e9
+        this_highlim = this_lowlim + 6e9
         if iterator >= this_lowlim and iterator < this_highlim:
             newlist = list(possible_weight_location)
             newgrid = create_grid(d)
