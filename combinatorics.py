@@ -6,8 +6,8 @@ n = len(sys.argv)
 if n != 3:# d and weight
     print("Not enough arguments")
     exit()
-d = sys.argv[1]
-w = sys.argv[2]
+d = int(sys.argv[1])
+w = int(sys.argv[2])
 
 #figure out how many break up ints of 6e9
 breaks = math.ceil(math.comb(d**2, w)/(6e9))
