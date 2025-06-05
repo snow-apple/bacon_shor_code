@@ -1,21 +1,21 @@
 #!/bin/bash
 
-#SBATCH --partition=scavenge
-#SBATCH --time=23:55:00
+#SBATCH --partition=day
+#SBATCH --time=5:55:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=shwetlana.jha@yale.edu
-#SBATCH --array=1-2
+#SBATCH --array=1-5
 #SBATCH --mem-per-cpu=4GB
-#SBATCH --job-name=hy_tcnot
+#SBATCH --job-name=MLEdecoder
 
 # Define parameter ranges
 ds=3
-de=6
+de=10
 dd=2
-ps=0.06
-pe=0.13
-dp=0.01
-ns=10
+ps=1e-6
+pe=1e-3
+dp=0.00001998
+ns=1000
 
 # Set the Slurm job array ID as a variable
 JOB_ARRAY_ID=$SLURM_ARRAY_TASK_ID
@@ -24,4 +24,4 @@ JOB_ARRAY_ID=$SLURM_ARRAY_TASK_ID
 module load miniconda
 conda activate bs
 #Run the python file with the current parameter values
-python mle.py "$ds" "$de" "$dd" "$ps" "$pe" "$dp" "$ns" "threshold:$JOB_ARRAY_ID"
+python mle.py "$ds" "$de" "$dd" "$ps" "$pe" "$dp" "$ns" "lowp5e3$JOB_ARRAY_ID"
