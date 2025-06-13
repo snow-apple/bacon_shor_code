@@ -5,6 +5,7 @@ import itertools
 from itertools import combinations
 import random
 import matplotlib.pyplot as plt
+import numpy as np 
 
 #false is no why y error
 def create_grid(distance):
@@ -369,35 +370,41 @@ def combine_parallel_data(num_files, file_prefix, file_suffix, output_file):
             _, _, count, shots = line.strip().split()
             total_count += int(count)
             total_shots += int(shots)
+        log_error_prob = total_count/total_shots
+        std = np.sqrt(log_error_prob * (1 - log_error_prob)/total_shots)
 
-        output.write(f"{d} {p} {total_count} {total_shots}\n")
+        output.write(f"{d} {p} {total_count} {total_shots} {std}\n")
 
     # Close files
     for f in files:
         f.close()
     output.close()
 
-#for scipy data collection, doesn't include the error bars
+
 def print_from_csv(title):
-    #Distance,Physical Error Probability, errors, shots
+    #Distance,Physical Error Probability, errors, shots, std
     distances=[]
     phys_probs={}
     log_probs = {}
+    error_bars={}
     with open(title, "r") as f:
         for line in f:
-            d, phys, count, shots = line.strip().split()
+            d, phys, count, shots, std = line.strip().split()
             d = int(d)
-            phys, count, shots = float(phys), int(count), int(shots)
+            phys, count, shots, std = float(phys), int(count), int(shots), float(std)
             if d not in distances:
                 distances.append(d)  # Keep track of first appearance order
                 phys_probs[d] = []
                 log_probs[d] = []
+                error_bars[d] = []
             phys_probs[d].append(phys)
             log_probs[d].append(count/shots)
+            error_bars[d].append(std)
             
     phys_lists = [phys_probs[d] for d in distances]
     log_lists = [log_probs[d] for d in distances]
-    return phys_lists, log_lists, distances
+    errorbars_list = [error_bars[d] for d in distances]
+    return phys_lists, log_lists, distances, errorbars_list
 
     # distances=[]
     # phys_probs={}
