@@ -24,7 +24,7 @@ def Print(grid):
 
 
 '''uses check_config_row and check_config_col to evaluate whether
-the configuration is possible'''
+the configuration is possible to be a Y logical'''
 def check_config(grid):
     col = check_config_col(grid) #True if all column stabilizers work
     row = check_config_row(grid)# True if all row stabilizers work
@@ -72,7 +72,8 @@ def check_config_row(grid):
     else:
         return False
 
-'''Takes in a grid and a list of indexes on the grid and outputs the stabilizer measurement, 1 or -1'''
+'''Takes in a grid and a list of indexes on the grid that represent what physical qubits make up the stabilizer
+and outputs the stabilizer measurement, 1 or -1. Uses notation for grid that starts at 0 at top left index'''
 def check_stabilizer(grid, positions):
     d = len(grid)
     boolean = False
@@ -86,15 +87,10 @@ def check_stabilizer(grid, positions):
         return 1
     else:
         return -1
-
-
-
     
-
-  
-
 '''takes in grid and a list of positions where to place y logicals
-and inserts True in those positions'''
+and inserts True in those positions
+Assumes positions are given such that the topleft number is 1 and not 0'''
 def add_y_error(grid,positions):
     d = len(grid)#find length of grid
     for position in positions:
@@ -263,6 +259,8 @@ def construct_stabilizers(d, grid):
         Cs[tuple(l)] = check_stabilizer(grid, l)
     return Cs
 
+'''constructs the stabilizers for detecting y errors, 
+which are the x and z stabilizers along neighboring rows and columns in bs'''
 #for scipy decoder
 def construct_stabilizers_scipy(d, grid):
     total = []
@@ -277,9 +275,27 @@ def construct_stabilizers_scipy(d, grid):
         total.append(listrow)
         total.append(listcol) 
     # Cs = {}# stabilizer check values, these are the measured stabilizer values
-    I = []
-    C = []
-    for l in total:
+    I = []#list of all of the stabilizers, which itself is a list that contain the physical qubits in that stabilizer
+    C = []#list of syndrome measurement of each of those stabilizers in I
+    for l in total:# l is a list of all of the physical qubits in a certain stabilizer 
+        I.append(l)
+        C.append(check_stabilizer(grid, l))
+    return I, C
+
+'''constructs the stabilizers for detecting x errors, 
+which are just the z stabilizers in'''
+def construct_stabilizers_scipy_x_errors(d, grid):
+    total = []
+    for i in range(d-1):
+        listrow=[]
+        for q in range(d):
+            listrow.append(d*i +q)
+            listrow.append((d)*(i+1) + q)
+        total.append(listrow)
+    # Cs = {}# stabilizer check values, these are the measured stabilizer values
+    I = []#list of all of the stabilizers, which itself is a list that contain the physical qubits in that stabilizer
+    C = []#list of syndrome measurement of each of those stabilizers in I
+    for l in total:# l is a list of all of the physical qubits in a certain stabilizer 
         I.append(l)
         C.append(check_stabilizer(grid, l))
     return I, C
@@ -322,6 +338,13 @@ def solver_accuracy(d, grid, predicted):
     num_y_errors = count_y_errors(sum)
     return(num_y_errors % 2 == 0 and check_config(sum))
 
+def solver_accuracy_x_errors(d, grid, predicted):
+    #edit this with the ylogical thing
+    sum = add_grids(d, grid, predicted)
+    num_y_errors = count_y_errors(sum)
+    return(num_y_errors % 2 == 0 and check_config_row(sum))
+
+
 def plot(physical, logical,low_lim, high_lim, title="",  error_bars=None):
     fig,ax = plt.subplots(1,1,dpi=200,figsize = (4,3))
     if error_bars is not None:
@@ -353,6 +376,7 @@ def plot_multiple(distances, physical, logical,low_lim, high_lim, decoder, title
     ax.set_ylabel("Logical Error Rate")
     plt.title(title)
 
+'''combines data into one file from the running parallel on cluster'''
 def combine_parallel_data(num_files, file_prefix, file_suffix, output_file):
     files = [open(f"{file_prefix}{i}{file_suffix}", "r") for i in range(1, num_files + 1)]
     output = open(output_file, "a")
@@ -380,7 +404,9 @@ def combine_parallel_data(num_files, file_prefix, file_suffix, output_file):
         f.close()
     output.close()
 
-
+'''extracts data from input file and returns the lists of phys error probs, 
+log error probs for each distance, the list of distances, and the lists of 
+error bars for each phys error prob for each list of phys error probs'''
 def print_from_csv(title):
     #Distance,Physical Error Probability, errors, shots, std
     distances=[]
