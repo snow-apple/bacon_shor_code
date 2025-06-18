@@ -372,7 +372,7 @@ def combine_parallel_data(num_files, file_prefix, file_suffix, output_file):
             total_shots += int(shots)
         log_error_prob = total_count/total_shots
         std = np.sqrt(log_error_prob * (1 - log_error_prob)/total_shots)
-        print(std)
+        # print(std)
         output.write(f"{d} {p} {total_count} {total_shots} {std}\n")
 
     # Close files
