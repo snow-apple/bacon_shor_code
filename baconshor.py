@@ -338,11 +338,18 @@ def solver_accuracy(d, grid, predicted):
     num_y_errors = count_y_errors(sum)
     return(num_y_errors % 2 == 0 and check_config(sum))
 
+'''checks to see if the product of the original error grid or '''
 def solver_accuracy_x_errors(d, grid, predicted):
-    #edit this with the ylogical thing
     sum = add_grids(d, grid, predicted)
-    num_y_errors = count_y_errors(sum)
-    return(num_y_errors % 2 == 0 and check_config_row(sum))
+    #check to see if sum is an x logical: an even number of X errors in each row or an odd number of X errors in each row
+    errors_per_row = []
+    for i in range(d):
+        count_per_row = 0
+        for j in range(d):
+            if sum[i][j] == 1:
+                count_per_row += 1
+        errors_per_row.append(count_per_row)
+    return (all(r1 % 2 == 0 for r1 in errors_per_row)) and check_config_row(sum)
 
 
 def plot(physical, logical,low_lim, high_lim, title="",  error_bars=None):
