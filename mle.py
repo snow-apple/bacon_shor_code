@@ -4,6 +4,7 @@ import numpy as np
 from scipy.optimize import milp, LinearConstraint, Bounds, OptimizeResult
 import matplotlib.pyplot as plt
 import csv
+import time
 from typing import List, Union
 def mle_decoder_bs(M : int, I : List[List[int]], C : List[int], p : Union[List[float], float]) -> OptimizeResult:
     """
@@ -23,12 +24,13 @@ def mle_decoder_bs(M : int, I : List[List[int]], C : List[int], p : Union[List[f
     N = len(I)
     assert len(C) == N, "Length of C must be N"
 
+    #can remove
     if np.isscalar(p):
         p = [p] * M
-    elif type(p) is List:
-        assert len(p) == M, "Length of p must be M"
-    else:
-        raise ValueError('p must be a float or a list of floats')
+    # elif type(p) is List:
+    #     assert len(p) == M, "Length of p must be M"
+    # else:
+    #     raise ValueError('p must be a float or a list of floats')
 
     # Idea: The decision variable x contains both E_j and K_i values.
     # i.e. x = [E_1, ..., E_M, K_1, ..., K_N]
@@ -37,7 +39,7 @@ def mle_decoder_bs(M : int, I : List[List[int]], C : List[int], p : Union[List[f
 
     # Construct the objective function coefficients, by default set the K_i coefficients to zero
     # Note the minus sign for the E_i coeffs because the solver minimizes the objective function
-    c = np.array([-np.log(p_j) + np.log(1 - p_j) for p_j in p] + [0]*N) 
+    c = np.array([-np.log(p_j) + np.log(1 - p_j) for p_j in p] + [0]*N) #remove since assuming all p are same
 
     # Construct equality constraints matrix (constraints are Ax = b)
     A_eq = np.zeros((N, M + N)) # N constraints, (M + N) variables
@@ -122,19 +124,25 @@ if n != 9:
     exit()
 
 for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates over d values
+    #construct stabilizer - I
+    I = baconshor.construct_stabilizers_scipy_I(M)
     filename = sys.argv[8] + ".txt"
     with open(filename, "a") as file:
         for p in np.arange(float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6])):#iterates over p values
             count = 0
             shots = int(sys.argv[7])
+            starttime = time.monotonic()
             for i in range(int(shots)):#iterates over number of samples/shots
                 grid = baconshor.random_error_grid(M,p)
-                I, C = baconshor.construct_stabilizers_scipy(M,grid)
+                #construct C
+                C = baconshor.construct_stabilizers_scipy_C(I,grid) #dont need to construct I for every shot 
                 guess = print_result(*mle_decoder_bs(M**2,I,C,p))
                 if(baconshor.solver_accuracy(M,grid,baconshor.solver_to_grid_scipy(M,guess)) != True):
                     count+=1
+            endtime = time.monotonic()
             # log_error_prob = count/shots
             # std = np.sqrt(log_error_prob * (1 - log_error_prob) / shots)
-            print(M, p, count, shots, sep=" ", file=file)
+            print(M, p, count, shots, endtime - starttime, sep=" ", file=file)#use time to see if changin stabilizer makes a diff
+            #see how much time each function takes - package??- py-spy, speedscope
 
-
+#numpy is faster than lists
