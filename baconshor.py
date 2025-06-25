@@ -261,8 +261,7 @@ def construct_stabilizers(d, grid):
 
 '''constructs the stabilizers for detecting y errors, 
 which are the x and z stabilizers along neighboring rows and columns in bs'''
-#for scipy decoder
-def construct_stabilizers_scipy(d, grid):
+def construct_stabilizers_scipy_I(d):
     total = []
     for i in range(d-1):
         listrow=[]
@@ -276,11 +275,36 @@ def construct_stabilizers_scipy(d, grid):
         total.append(listcol) 
     # Cs = {}# stabilizer check values, these are the measured stabilizer values
     I = []#list of all of the stabilizers, which itself is a list that contain the physical qubits in that stabilizer
-    C = []#list of syndrome measurement of each of those stabilizers in I
     for l in total:# l is a list of all of the physical qubits in a certain stabilizer 
         I.append(l)
-        C.append(check_stabilizer(grid, l))
-    return I, C
+    return I
+
+def construct_stabilizers_scipy_C(I, grid):
+    C = []#list of syndrome measurement of each of those stabilizers in I
+    for l in I:# l is a list of all of the physical qubits in a certain stabilizer 
+        C.append(check_stabilizer(grid, l))#put in diff function
+    return C
+
+#for scipy decoder
+# def construct_stabilizers_scipy(d, grid):
+#     total = []
+#     for i in range(d-1):
+#         listrow=[]
+#         listcol=[]
+#         for q in range(d):
+#             listrow.append(d*i +q)
+#             listrow.append((d)*(i+1) + q)
+#             listcol.append(d*q +i)
+#             listcol.append(d*q +(i+1))
+#         total.append(listrow)
+#         total.append(listcol) 
+#     # Cs = {}# stabilizer check values, these are the measured stabilizer values
+#     I = []#list of all of the stabilizers, which itself is a list that contain the physical qubits in that stabilizer
+#     C = []#list of syndrome measurement of each of those stabilizers in I
+#     for l in total:# l is a list of all of the physical qubits in a certain stabilizer 
+#         I.append(l)
+#         C.append(check_stabilizer(grid, l))#put in diff function
+#     return I, C
 
 '''constructs the stabilizers for detecting x errors, 
 which are just the z stabilizers in'''
@@ -334,7 +358,7 @@ are 1
 '''
 def solver_accuracy(d, grid, predicted):
     #edit this with the ylogical thing
-    sum = add_grids(d, grid, predicted)
+    sum = add_grids(d, grid, predicted) #use numpy instead
     num_y_errors = count_y_errors(sum)
     return(num_y_errors % 2 == 0 and check_config(sum))
 
