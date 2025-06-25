@@ -25,10 +25,10 @@ def mle_decoder_bs(M : int, I : List[List[int]], C : List[int], p : Union[List[f
 
     if np.isscalar(p):
         p = [p] * M
-    elif type(p) is List:
-        assert len(p) == M, "Length of p must be M"
-    else:
-        raise ValueError('p must be a float or a list of floats')
+    # elif type(p) is List:
+    #     assert len(p) == M, "Length of p must be M"
+    # else:
+    #     raise ValueError('p must be a float or a list of floats')
 
     # Idea: The decision variable x contains both E_j and K_i values.
     # i.e. x = [E_1, ..., E_M, K_1, ..., K_N]
@@ -122,6 +122,7 @@ if n != 9:
     exit()
 
 for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates over d values
+    I = baconshor.construct_stabilizers_scipy_x_errors_I(M)
     filename = sys.argv[8] + ".txt"
     with open(filename, "a") as file:
         for p in np.arange(float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6])):#iterates over p values
@@ -129,7 +130,7 @@ for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates o
             shots = int(sys.argv[7])
             for i in range(int(shots)):#iterates over number of samples/shots
                 grid = baconshor.random_error_grid(M,p)
-                I, C = baconshor.construct_stabilizers_scipy_x_errors(M,grid)
+                C = baconshor.construct_stabilizers_scipy_x_errors_C(M,grid)
                 guess = print_result(*mle_decoder_bs(M**2,I,C,p))
                 if(baconshor.solver_accuracy_x_errors(M,grid,baconshor.solver_to_grid_scipy(M,guess)) != True):
                     count+=1

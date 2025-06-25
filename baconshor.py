@@ -308,7 +308,7 @@ def construct_stabilizers_scipy_C(I, grid):
 
 '''constructs the stabilizers for detecting x errors, 
 which are just the z stabilizers in'''
-def construct_stabilizers_scipy_x_errors(d, grid):
+def construct_stabilizers_scipy_x_errors_I(d):
     total = []
     for i in range(d-1):
         listrow=[]
@@ -318,11 +318,15 @@ def construct_stabilizers_scipy_x_errors(d, grid):
         total.append(listrow)
     # Cs = {}# stabilizer check values, these are the measured stabilizer values
     I = []#list of all of the stabilizers, which itself is a list that contain the physical qubits in that stabilizer
-    C = []#list of syndrome measurement of each of those stabilizers in I
     for l in total:# l is a list of all of the physical qubits in a certain stabilizer 
         I.append(l)
+    return I
+
+def construct_stabilizers_scipy_x_errors_C(I, grid):
+    C = []#list of syndrome measurement of each of those stabilizers in I
+    for l in I:# l is a list of all of the physical qubits in a certain stabilizer 
         C.append(check_stabilizer(grid, l))
-    return I, C
+    return C
 
 #for gekko
 def solver_to_grid(d, solver_output):
