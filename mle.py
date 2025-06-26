@@ -25,8 +25,8 @@ def mle_decoder_bs(M : int, I : List[List[int]], C : List[int], p : Union[List[f
     assert len(C) == N, "Length of C must be N"
 
     #can remove
-    if np.isscalar(p):
-        p = [p] * M
+    # if np.isscalar(p):
+    #     p = [p] * M
     # elif type(p) is List:
     #     assert len(p) == M, "Length of p must be M"
     # else:
@@ -39,8 +39,8 @@ def mle_decoder_bs(M : int, I : List[List[int]], C : List[int], p : Union[List[f
 
     # Construct the objective function coefficients, by default set the K_i coefficients to zero
     # Note the minus sign for the E_i coeffs because the solver minimizes the objective function
-    c = np.array([-np.log(p_j) + np.log(1 - p_j) for p_j in p] + [0]*N) #remove since assuming all p are same
-
+    # c = np.array([-np.log(p_j) + np.log(1 - p_j) for p_j in p] + [0]*N) #remove since assuming all p are same
+    c = np.concatenate([np.full(M, -np.log(p) + np.log(1 - p)), np.zeros(N)])
     # Construct equality constraints matrix (constraints are Ax = b)
     A_eq = np.zeros((N, M + N)) # N constraints, (M + N) variables
     b_eq = []
