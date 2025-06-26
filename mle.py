@@ -132,17 +132,30 @@ for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates o
             count = 0
             shots = int(sys.argv[7])
             starttime = time.monotonic()
+            averagerandomerrorgridtime = 0
+            averageconstructstabilizertime = 0
+            averagedecodertime = 0
+            averageaccuracytime = 0
             for i in range(int(shots)):#iterates over number of samples/shots
+                shotstarttime = time.monotonic()
                 grid = baconshor.random_error_grid(M,p)
+                randomerrorgridtime = time.monotonic()
+                averagerandomerrorgridtime+= (randomerrorgridtime - shotstarttime)
                 #construct C
                 C = baconshor.construct_stabilizers_scipy_C(I,grid) #dont need to construct I for every shot 
+                constructstabilizertime = time.monotonic()
+                averageconstructstabilizertime += (constructstabilizertime - randomerrorgridtime)
                 guess = print_result(*mle_decoder_bs(M**2,I,C,p))
+                decodertime = time.monotonic()
+                averagedecodertime += (decodertime -constructstabilizertime)
                 if(baconshor.solver_accuracy(M,grid,baconshor.solver_to_grid_scipy(M,guess)) != True):
                     count+=1
+                accuracytime = time.monotonic()
+                averageaccuracytime+= (accuracytime - decodertime)
             endtime = time.monotonic()
             # log_error_prob = count/shots
             # std = np.sqrt(log_error_prob * (1 - log_error_prob) / shots)
-            print(M, p, count, shots, endtime - starttime, sep=" ", file=file)#use time to see if changin stabilizer makes a diff
+            print(M, p, count, shots, endtime - starttime, averagerandomerrorgridtime/shots,  averageconstructstabilizertime/shots, averagedecodertime/shots,averageaccuracytime/shots, sep=" ", file=file)#use time to see if changin stabilizer makes a diff
             #see how much time each function takes - package??- py-spy, speedscope
 
 #numpy is faster than lists
