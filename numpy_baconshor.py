@@ -62,18 +62,14 @@ def check_config_row(grid):
 
     return sum(val == False for val in row_bool_values) == d - 1
 
-'''Takes in a grid and a list of indexes on the grid that represent what physical qubits make up the stabilizer
-and outputs the stabilizer measurement, 1 or -1. Uses notation for grid that starts at 0 at top left index'''
-def check_stabilizer(grid, positions):
-    d = grid.shape[0]  # assumes grid is square
-    boolean = False
+'''
+stab is a grid with a stabilizer whose construction is described in construct_stabilizers_scipy_I.
+It will be AND-ed with the grid given and then the resulting grid will be XORed.
+Tis functoin vectorizes this so that we can check do this for all stabs in stabilizers'''
+def check_stabilizer(grid, stab):
+    result = np.bitwise_and(grid, stab)
+    return  np.bitwise_xor.reduce(result)
 
-    for p in positions:
-        row = p // d
-        col = p % d
-        boolean ^= grid[row, col]  # NumPy array access
-
-    return 1 if not boolean else -1
     
 '''takes in grid and a list of positions where to place y logicals
 and inserts True in those positions
@@ -214,7 +210,7 @@ def random_error_grid(d,p):
     return grid
 
 '''Create a dictionary of stabilizer measurements that gives the syndrome for each neighboring row and column'''
-#used for gekko decoder
+#used for gekko decoder, not numpy efficient right now
 def construct_stabilizers(d, grid):
     Cs = {}  # Dictionary of stabilizer values
 
@@ -231,50 +227,50 @@ def construct_stabilizers(d, grid):
     return Cs
 
 
-'''constructs the stabilizers for detecting y errors, 
-which are the x and z stabilizers along neighboring rows and columns in bs'''
+'''returns a 3d numpy array that stores d by d grids of all of the stabilizers in such a way where
+the location of each stabilizer is denoted by 1s on physical qubits, while the rest of the grid is 
+filled with 0s'''
 def construct_stabilizers_scipy_I(d):
-    stabilizers = []
+    stabilizers = np.zeros((2 * (d - 1), d, d), dtype=int) # use 3d numpy array to store the grid of stabilizers
 
     for i in range(d - 1):
         # Row stabilizer: vertically adjacent rows
-        row_stabilizer = np.concatenate([
-            np.arange(d * i, d * i + d),
-            np.arange(d * (i + 1), d * (i + 1) + d)
-        ])
-        stabilizers.append(row_stabilizer)
+        stabilizers[2*i,i,:] = 1
+        stabilizers[2*i,i+1,:] = 1
 
         # Column stabilizer: horizontally adjacent columns
-        col_stabilizer = np.concatenate([
-            np.arange(d * 0 + i, d * d, d),       # i-th column
-            np.arange(d * 0 + (i + 1), d * d, d)  # (i+1)-th column
-        ])
-        stabilizers.append(col_stabilizer)
+        stabilizers[2*i +1,:, i] = 1
+        stabilizers[2*i +1,:, i+1] = 1
 
-    return np.array(stabilizers, dtype=object) 
+    return stabilizers
 
 '''list of syndrome measurement of each of those stabilizers in I'''
 def construct_stabilizers_scipy_C(I, grid):
-    return np.array([check_stabilizer(grid, stab) for stab in I], dtype=int)
+    C = np.empty(I.shape[0], dtype=int)
+    for stab in I:
+        C = check_stabilizer(grid, stab)
+    return C
+
 
 
 '''constructs the stabilizers for detecting x errors, 
 which are just the z stabilizers in'''
 def construct_stabilizers_scipy_x_errors_I(d):
-    stabilizers = []
+    stabilizers = np.zeros((2 * (d - 1), d, d), dtype=int) # use 3d numpy array to store the grid of stabilizers
 
     for i in range(d - 1):
-        row_stabilizer = np.concatenate([
-            np.arange(d * i, d * i + d),
-            np.arange(d * (i + 1), d * (i + 1) + d)
-        ])
-        stabilizers.append(row_stabilizer)
-
-    return np.array(stabilizers, dtype=int)
+        # Row stabilizer: vertically adjacent rows
+        stabilizers[2*i,i,:] = 1
+        stabilizers[2*i,i+1,:] = 1
+    return stabilizers
 
 
 def construct_stabilizers_scipy_x_errors_C(I, grid):
-    return np.array([check_stabilizer(grid, stab) for stab in I], dtype=int)
+    C = np.empty(I.shape[0], dtype=int)
+    for stab in I:
+        C = check_stabilizer(grid, stab)
+    return C
+
 
 #for gekko
 def solver_to_grid_gekko(d, solver_output: dict) -> np.ndarray:
