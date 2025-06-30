@@ -13,10 +13,19 @@ def create_grid(distance):
     return grid
 
 #1 means error
-def Print(grid):
+def Print(grid,d):
+    grid = grid.reshape((d, d))
     for row in grid.astype(int):
         print(" ".join(map(str, row)))
 
+def Print_old(grid):
+    for row in grid:
+        for element in row:
+            if element == True:
+                print("1", end=" ")
+            else:
+                print("0", end=" ")
+        print()
 
 '''uses check_config_row and check_config_col to evaluate whether
 the configuration is possible to be a Y logical'''
@@ -68,7 +77,7 @@ It will be AND-ed with the grid given and then the resulting grid will be XORed.
 Tis functoin vectorizes this so that we can check do this for all stabs in stabilizers'''
 def check_stabilizer(grid, stab):
     result = np.bitwise_and(grid, stab)
-    return  np.bitwise_xor.reduce(result)
+    return  np.bitwise_xor.reduce(result.flatten())
 
     
 '''takes in grid and a list of positions where to place y logicals
@@ -226,7 +235,21 @@ def construct_stabilizers(d, grid):
 
     return Cs
 
-
+def construct_stabilizers_old(d):
+    stabilizers = []
+    for i in range(d - 1):
+        # Row stabilizer: vertically adjacent rows
+        row_stabilizer = np.concatenate([
+            np.arange(d * i, d * i + d),
+            np.arange(d * (i + 1), d * (i + 1) + d)
+        ])
+        stabilizers.append(row_stabilizer)
+        col_stabilizer = np.concatenate([
+            np.arange(d * 0 + i, d * d, d),       
+            np.arange(d * 0 + (i + 1), d * d, d)  
+        ])
+        stabilizers.append(col_stabilizer)
+    return stabilizers
 '''returns a 3d numpy array that stores d by d grids of all of the stabilizers in such a way where
 the location of each stabilizer is denoted by 1s on physical qubits, while the rest of the grid is 
 filled with 0s'''
@@ -247,8 +270,11 @@ def construct_stabilizers_scipy_I(d):
 '''list of syndrome measurement of each of those stabilizers in I'''
 def construct_stabilizers_scipy_C(I, grid):
     C = np.empty(I.shape[0], dtype=int)
-    for stab in I:
-        C = check_stabilizer(grid, stab)
+    for i, stab in enumerate(I):
+        C[i] = 1-2* check_stabilizer(grid, stab)
+        # print(i)
+        # print(check_stabilizer(grid, stab))
+        # print(C)
     return C
 
 
@@ -267,8 +293,8 @@ def construct_stabilizers_scipy_x_errors_I(d):
 
 def construct_stabilizers_scipy_x_errors_C(I, grid):
     C = np.empty(I.shape[0], dtype=int)
-    for stab in I:
-        C = check_stabilizer(grid, stab)
+    for i, stab in enumerate(I):
+        C[i] = 1-2* check_stabilizer(grid, stab)
     return C
 
 

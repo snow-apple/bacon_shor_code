@@ -125,6 +125,7 @@ if n != 9:
 for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates over d values
     #construct stabilizer - I
     I = numpy_baconshor.construct_stabilizers_scipy_I(M)
+    I_decoder = numpy_baconshor.construct_stabilizers_old(M)
     filename = sys.argv[8] + ".txt"
     with open(filename, "a") as file:
         for p in np.arange(float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6])):#iterates over p values
@@ -141,10 +142,10 @@ for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates o
                 randomerrorgridtime = time.monotonic()
                 averagerandomerrorgridtime+= (randomerrorgridtime - shotstarttime)
                 #construct C
-                C = numpy_baconshor.construct_stabilizers_scipy_C(I,grid) #dont need to construct I for every shot 
+                C = numpy_baconshor.construct_stabilizers_scipy_C(I,grid)
                 constructstabilizertime = time.monotonic()
                 averageconstructstabilizertime += (constructstabilizertime - randomerrorgridtime)
-                guess = print_result(*mle_decoder_bs(M**2,I,C,p))
+                guess = print_result(*mle_decoder_bs(M**2,I_decoder,C,p))
                 decodertime = time.monotonic()
                 averagedecodertime += (decodertime -constructstabilizertime)
                 if(numpy_baconshor.solver_accuracy(M,grid,numpy_baconshor.solver_to_grid_scipy(M,guess)) != True):
@@ -156,5 +157,3 @@ for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates o
             # std = np.sqrt(log_error_prob * (1 - log_error_prob) / shots)
             print(M, p, count, shots, endtime - starttime, averagerandomerrorgridtime/shots,  averageconstructstabilizertime/shots, averagedecodertime/shots,averageaccuracytime/shots, sep=" ", file=file)#use time to see if changin stabilizer makes a diff
             #see how much time each function takes - package??- py-spy, speedscope
-
-#numpy is faster than lists
