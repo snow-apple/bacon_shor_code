@@ -1,0 +1,2700 @@
+Original Error Grid:
+1 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 1 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 1 0 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 1 
+0 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+1 0 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 1 0 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 1 0 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 1 0 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 1 
+0 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+1 0 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 1 
+0 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 1 0 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+1 0 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 1 0 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 1 0 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 1 0 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 1 0 1 
+Successed?:
+Yes
+5 0.08 0 1
+Original Error Grid:
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 0 0 
+0 0 0 1 1 
+Successed?:
+Yes
+5 0.08 0 1

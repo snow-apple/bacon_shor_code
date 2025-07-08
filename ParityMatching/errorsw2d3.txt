@@ -1,0 +1,252 @@
+Original Error Grid:
+1 1 0 
+0 0 0 
+0 0 0 
+000001Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+1 0 1 
+0 0 0 
+0 0 0 
+000100Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+1 0 0 
+1 0 0 
+0 0 0 
+000010Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+1 0 0 
+0 1 0 
+0 0 0 
+000011Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+1 0 0 
+0 0 1 
+0 0 0 
+000110Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+1 0 0 
+001000Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 1 0 
+001001Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 1 
+001100Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+1 0 0 
+0 0 0 
+0 0 0 
+110000Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+0 1 1 
+0 0 0 
+0 0 0 
+010000Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+0 1 0 
+1 0 0 
+0 0 0 
+000011Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+0 1 0 
+0 1 0 
+0 0 0 
+000010Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+0 1 0 
+0 0 1 
+0 0 0 
+010010Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+0 1 0 
+0 0 0 
+1 0 0 
+001001Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+0 1 0 
+0 0 0 
+0 1 0 
+001000Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+0 1 0 
+0 0 0 
+0 0 1 
+011000Successed?:
+No
+3 0.2 1 1
+Original Error Grid:
+0 1 0 
+0 0 0 
+0 0 0 
+100100Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+0 1 0 
+0 0 0 
+0 0 0 
+100100Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+0 1 0 
+0 0 0 
+0 0 0 
+100100Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+0 1 0 
+0 0 0 
+0 0 0 
+100100Successed?:
+Yes
+3 0.2 0 1
+Original Error Grid:
+0 1 0 
+0 0 0 
+0 0 0 
+100100Successed?:
+Yes
+3 0.2 0 1
