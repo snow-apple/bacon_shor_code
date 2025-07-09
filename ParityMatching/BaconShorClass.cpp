@@ -20,7 +20,10 @@ BaconShorBase createBaconShorBase(int n)
 	BaconShor.NoOfZStabilizers = n-1; // for each pair of columns
     BaconShor.NoOfXStabilizers = n-1; // for each pair of rows
     BaconShor.NoOfStabilizers = 2*(n-1); // for each pair of rows
-
+	BaconShor.NoOfErrors = 0; //how many errors there are
+	BaconShor.ErrorPositions = std::vector<int>{};//where those errors are
+	BaconShor.ErrorsPerRow = new int[n]();//initializes to 0
+	BaconShor.ErrorsPerCol = new int[n]();//initializes to 0
 
     BaconShor.QubitYErrs = new bool[n*n]; // 0 of no Y err else 1
 	for (int q = 0; q < n*n; q++)
@@ -157,6 +160,10 @@ void BaconShorBase::InitHashingNoise(double pTotal)
             if (err < pTotal)
             {
                 QubitYErrs[q] = 1;
+				NoOfErrors += 1;
+				ErrorPositions.push_back(q);
+				ErrorsPerRow[q / n] += 1;
+				ErrorsPerCol[q % n] += 1;
             }
 
             // print errors
@@ -177,6 +184,10 @@ void BaconShorBase::InitCombinatorialErr(const vector<int>& sampleIndices)
         // Insert errors 
 		for(int idx: sampleIndices){
             QubitYErrs[idx] = 1;
+			NoOfErrors += 1;
+			ErrorPositions.push_back(idx);
+			ErrorsPerRow[idx / n] += 1;
+			ErrorsPerCol[idx % n] += 1;
 		}
             // print errors
 

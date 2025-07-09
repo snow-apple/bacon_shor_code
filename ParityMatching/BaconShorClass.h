@@ -10,9 +10,13 @@ struct BaconShorBase
     int NoOfZStabilizers;
     int NoOfXStabilizers;
     int NoOfStabilizers;
+	int NoOfErrors;
+	vector<int> ErrorPositions;
 
 	bool* QubitYErrs;
 	bool* StabParities;
+	int* ErrorsPerRow;
+	int* ErrorsPerCol;
 
 
 
