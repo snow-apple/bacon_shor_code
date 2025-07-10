@@ -29,7 +29,7 @@ def createBaconShorBase(n):
 
     BaconShor.QubitYErrs = [0] * (n*n) #0 of no Y err else 1
 
-    BaconShor.StabParities = [None]*(2*(n-1)) #X stabs indexed to row above, then Z stabs indexed to column to left
+    BaconShor.StabParities = [False]*(2*(n-1)) #X stabs indexed to row above, then Z stabs indexed to column to left
 
     return BaconShor
 
