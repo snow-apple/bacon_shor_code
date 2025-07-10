@@ -54,8 +54,9 @@ int main(int argc, char** argv)
         // BS.InitHashingNoise(pTotal); //UNCOMMENT to choose hashing noise
 
 
-        int x = 25; // numbers from 0 to 24
+        int x = 9; // numbers from 0 to 9
         vector<vector<int>> combinations;
+
 
         // for (int i = 0; i < x; i++) {
         //     combinations.push_back({i});
@@ -72,7 +73,15 @@ int main(int argc, char** argv)
         //     }
         // }
         // }
+        // for (int i = 0; i < x; i++) {
+        //     for (int j = i + 1; j < x; j++) {
+        //         for (int k = j + 1; k < x; k++) {
+        //             combinations.push_back({i, j, k});
+        //     }
+        // }
+        // }
         BS.InitCombinatorialErr(combinations[atoi(argv[9])]); //UNCOMMENT to choose combinatorial noise
+        // BS.InitCombinatorialErr(combinations[2]);
         cout << "Original Error Grid:\n";
         for (int i = 0; i < BS.NoOfQubits; i++) {
             cout << BS.QubitYErrs[i] << " ";
@@ -82,10 +91,10 @@ int main(int argc, char** argv)
         tempend = clock(); // Recording end time.             
         HNtime += double(tempend - tempstart); // Calculating total time taken by the program.
 
-
         tempstart = clock();
         //Measure checks
         BS.AllStabParityMeas();
+        
         tempend = clock(); // Recording end time.             
         PMtime += double(tempend - tempstart); // Calculating total time taken by the program.
 
@@ -131,11 +140,32 @@ int main(int argc, char** argv)
             ParityMatcher.GetMatchingWeights();
             tempend = clock(); // Recording end time.             
             initMatcherTime += double(tempend - tempstart); // Calculating total time taken by the program.
+            
+            //add check for w=2, d = 3 so that it is able to correct all of these errors 
+            if(BS.NoOfErrors == 2 && n == 3 && ((BS.ErrorPositions[0] % n == BS.ErrorPositions[1] % n )||( BS.ErrorPositions[0] / n == BS.ErrorPositions[1] / n))){
+                if(BS.ErrorPositions[0] % n == BS.ErrorPositions[1] % n ){//same col
+                    //add to the two rows they are in
+                    ParityMatcher.RowsToApplyZ[BS.ErrorPositions[0] / n] = 1;
+                    ParityMatcher.RowsToApplyZ[BS.ErrorPositions[1] / n] = 1;
 
-            tempstart = clock();
-            ParityMatcher.Decode();
-            tempend = clock(); // Recording end time.             
-            DecodeTime += double(tempend - tempstart); // Calculating total time taken by the program.
+
+                }
+                else if(BS.ErrorPositions[0] / n == BS.ErrorPositions[1] / n ){//same row
+                    //add to the two cols they are in
+                    ParityMatcher.ColsToApplyX[BS.ErrorPositions[0] % n] = 1;
+                    ParityMatcher.ColsToApplyX[BS.ErrorPositions[1] % n] = 1;
+
+                }
+
+            }
+            //add check for w = 3, d = 5 so that it is able to correct all of these errors 
+            else{
+                //original Decoding wihtout any checks
+                tempstart = clock();
+                ParityMatcher.Decode();
+                tempend = clock(); // Recording end time.             
+                DecodeTime += double(tempend - tempstart); // Calculating total time taken by the program.
+            }
 
             tempstart = clock();
             succeeded = ParityMatcher.EvaluatedMatchingSuccess();

@@ -155,7 +155,7 @@ bool ParityMatcherClass::EvaluatedMatchingSuccess()
 	for (int qubrow = 0; qubrow < n; qubrow++) //do Zs per row first
 	{
 		bool RowZParity = RowsToApplyZ[qubrow];
-		for(int qubcol = 0; qubcol < n; qubcol++)
+		for(int qubcol = 0; qubcol < n; qubcol++)  
 		{
 			RowZParity = RowZParity ^ CodeObject.QubitYErrs[qubrow*n+qubcol];
 		}
