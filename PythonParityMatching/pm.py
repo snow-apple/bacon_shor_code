@@ -126,4 +126,3 @@ def broadcasting_correction(d,lowest_matching_weights):
 
 
 #new checking technique
-
