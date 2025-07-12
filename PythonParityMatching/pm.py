@@ -79,42 +79,51 @@ def get_lowest_matching(r1,r2,c1,c2):
 #6. Applying correction based on intersection - only if row = col
 def intersection_correction(d,lowest_matching_weights):
     predicted_grid = create_grid(d)
-    if len(lowest_matching_weights["row"]) == len(lowest_matching_weights["col"]):
-        #pair up the row and col list elements to make coordinates to apply the corrections to
-        list_of_coords = []
-        for i in range(len(lowest_matching_weights["row"])):
-            list_of_coords.append((lowest_matching_weights["row"][i], lowest_matching_weights["col"][i]))#adds coordinate tuples
-        
-        #Using the coordinates, add Y error to the grid
-        for coord in list_of_coords:
-            predicted_grid[coord[0]][coord[1]] ^= 1 #adds Y error 
+    
+    #pair up the row and col list elements to make coordinates to apply the corrections to
+    list_of_coords = []
+    for i in range(len(lowest_matching_weights["row"])):
+        list_of_coords.append((lowest_matching_weights["row"][i], lowest_matching_weights["col"][i]))#adds coordinate tuples
+    
+    #Using the coordinates, add Y error to the grid
+    for coord in list_of_coords:
+        predicted_grid[coord[0]][coord[1]] ^= 1 #adds Y error 
     return predicted_grid
     
+#6. Applying correction based on broadcasting - only if row != col
+def broadcasting_correction(d,lowest_matching_weights):
+    predicted_grid = create_grid(d)
+
+    list_of_coords = []
+    if len(lowest_matching_weights["row"]) < len(lowest_matching_weights["col"]):
+        if len(lowest_matching_weights["row"]) == 0:
+            for i in range(d):
+                for j in range(len(lowest_matching_weights["col"])):
+                    list_of_coords.append((i, lowest_matching_weights["col"][j]))
+        else:
+            #row numbers will broadcast out
+            for i in range(len(lowest_matching_weights["row"])):
+                list_of_coords.append((lowest_matching_weights["row"][i], lowest_matching_weights["col"][i]))#adds coordinate tuples
+            for j in range(len(lowest_matching_weights["row"]), len(lowest_matching_weights["col"])):
+                list_of_coords.append((lowest_matching_weights["row"][-1], lowest_matching_weights["col"][j]))#adds coordinate tuples
+
+    else:
+        if len(lowest_matching_weights["col"]) == 0:
+            for j in range(d):
+                for i in range(len(lowest_matching_weights["row"])):
+                    list_of_coords.append((lowest_matching_weights["row"][i],j))
+        else:
+            #col numbers will broadcast out
+            for i in range(len(lowest_matching_weights["col"])):
+                list_of_coords.append((lowest_matching_weights["row"][i], lowest_matching_weights["col"][i]))#adds coordinate tuples
+            for j in range(len(lowest_matching_weights["col"]), len(lowest_matching_weights["row"])):
+                list_of_coords.append((lowest_matching_weights["row"][j], lowest_matching_weights["col"][-1]))#adds coordinate tuples
+    # print(list_of_coords)
+    #Using the coordinates, add Y error to the grid
+    for coord in list_of_coords:
+        predicted_grid[coord[0]][coord[1]] ^= 1 #adds Y error 
+    return predicted_grid
 
 
+#new checking technique
 
-
-#generalize code into functions so that I can run in a jupyter notebook
-
-#write code that applies correction based on intersection and then checks
-#if the correction was right, using old code or the new technique 
-
-#generate all combos of w = 1 and w = 2 for d = 5, apply this script and check
-#if all rows = cols, if so then i can set a condition that if all rows = cols, 
-#then apply the intersection correction (check this before #6)
-# if not, than still check that if row = col, if applying the intersection works
-#both are same the only difference is cehcking if all are row = col,
-#for the not case, just keep track of how many are row=col and if they all are correctable using intersection
-
-#if not all are row=col, can they stillbe corrected using intersection broadcasting method?
-#if not correctable, is there another method?
-
-#for d = 3,4, are there any that are row = col, or is it always mismatched?
-#if always mismatched is it always odd or are there even ones?
-# is there any way using the row/col, that pm can correctly correct
-#in other words, is the high weight the issue or is it the pattern that's the issue
-#and does the high weight cause this pattern? - check this by looking at diff weights for
-#diff d values and looking the (d-1)/2 weights vs higher ones. 
-
-#is the intersection/broadcasting technqiue always wrong for the higher weights, cuz
-#if it is always wrong than we can correct by applying twice maybe?
