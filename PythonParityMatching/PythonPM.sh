@@ -10,18 +10,18 @@
 
 # Define parameter ranges
 ds=3
-de=7
+de=8
 dd=2
 ps=0.015
 pe=0.025
 dp=0.001
-ns=1000
+ns=10000
 
 # Set the Slurm job array ID as a variable
 JOB_ARRAY_ID=$SLURM_ARRAY_TASK_ID
 
 # use python
-# module load miniconda
-# conda activate bs
+module load miniconda
+conda activate bs
 #Run the python file with the current parameter values
-python paritymatchingscript.py "$ds" "$de" "$dd" "$ps" "$pe" "$dp" "$ns" "$JOB_ARRAY_ID"
+python paritymatchingscript.py "$ds" "$de" "$dd" "$ps" "$pe" "$dp" "$ns" "pmdata1e5$JOB_ARRAY_ID"

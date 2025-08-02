@@ -1,11 +1,11 @@
 
 from itertools import product
-# from tabulate import tabulate
+from tabulate import tabulate
 import itertools
 from itertools import combinations
 import random
-# import matplotlib.pyplot as plt
-# import numpy as np 
+import matplotlib.pyplot as plt
+import numpy as np 
 
 #false is no why y error
 def create_grid(distance):

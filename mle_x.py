@@ -130,7 +130,7 @@ for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates o
             shots = int(sys.argv[7])
             for i in range(int(shots)):#iterates over number of samples/shots
                 grid = baconshor.random_error_grid(M,p)
-                C = baconshor.construct_stabilizers_scipy_x_errors_C(M,grid)
+                C = baconshor.construct_stabilizers_scipy_x_errors_C(I,grid)
                 guess = print_result(*mle_decoder_bs(M**2,I,C,p))
                 if(baconshor.solver_accuracy_x_errors(M,grid,baconshor.solver_to_grid_scipy(M,guess)) != True):
                     count+=1

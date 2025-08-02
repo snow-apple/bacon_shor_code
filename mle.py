@@ -155,7 +155,7 @@ for M in range(int(sys.argv[1]) ,int(sys.argv[2]), int(sys.argv[3])):#iterates o
             endtime = time.monotonic()
             # log_error_prob = count/shots
             # std = np.sqrt(log_error_prob * (1 - log_error_prob) / shots)
-            print(M, p, count, shots, endtime - starttime, averagerandomerrorgridtime/shots,  averageconstructstabilizertime/shots, averagedecodertime/shots,averageaccuracytime/shots, sep=" ", file=file)#use time to see if changin stabilizer makes a diff
+            print(M, p, count, shots, sep=" ", file=file)#use time to see if changin stabilizer makes a diff
             #see how much time each function takes - package??- py-spy, speedscope
 
 #numpy is faster than lists

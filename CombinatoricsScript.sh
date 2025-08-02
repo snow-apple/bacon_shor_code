@@ -1,16 +1,16 @@
 #!/bin/bash
 
 #SBATCH --partition=day
-#SBATCH --time=4:55:00
+#SBATCH --time=10:55:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=shwetlana.jha@yale.edu
 #SBATCH --array=1
-#SBATCH --mem-per-cpu=4GB
+#SBATCH --mem-per-cpu=1GB
 #SBATCH --job-name=combinatorics
 
 # Define parameter ranges
-d=9
-w=11
+d=3
+w=5
 
 # Set the Slurm job array ID as a variable
 JOB_ARRAY_ID=$SLURM_ARRAY_TASK_ID
