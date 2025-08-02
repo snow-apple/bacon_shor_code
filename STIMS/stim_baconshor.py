@@ -1,4 +1,4 @@
-from numpy import np
+import numpy as np
 import pymatching
 '''params: distance d, probabilty of error p, list of positions(starting from 0) to 
 place Y errors with probability p
