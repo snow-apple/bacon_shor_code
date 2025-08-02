@@ -1,4 +1,4 @@
-import baconshor
+import numpy_baconshor
 import sys
 import math
 
@@ -13,7 +13,7 @@ w = int(sys.argv[2])
 breaks = math.ceil(math.comb(d**2, w)/(6e9))
 sum = 0
 for i in range(breaks):
-    sum += baconshor.list_of_grids2(d,w,i)
+    sum += numpy_baconshor.list_of_grids2(d,w,i)
 
 print(sum)
 

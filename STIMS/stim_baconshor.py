@@ -1,3 +1,5 @@
+from numpy import np
+import pymatching
 '''params: distance d, probabilty of error p, list of positions(starting from 0) to 
 place Y errors with probability p
 X stabilizers and gauges are vertical along columns
@@ -64,5 +66,49 @@ def construct_circuit(d, p, positions):
         circuit += "\n"
     return circuit
 
+def run(d, p, positions, shots):
+    circuit = construct_circuit(d, p, positions)
+    sampler = circuit.compile_detector_sampler()
+    samples = sampler.sample(shots=shots)
+    return samples
+# print(construct_circuit(3, 0.4, [0]))
 
-print(construct_circuit(3, 0.4, [0]))
+def convert_stab_measurements(measurements):
+    converted = []
+    for i in range(len(measurements)):
+        new = []
+        for measurement in measurements[i]:
+            if measurement == False:
+                new.append(1)
+            else:
+                new.append(-1)
+        converted.append(new)
+    return converted
+
+# '''gauges is a dictionary with two keys x and z, and each of the values are a list of tuples of what gauges to add '''
+# def add_gauges(circuit, gauges):
+#     for g in gauges:
+#         circuit += g
+#     return circuit 
+
+'''from the stim getting_started notebook'''
+def count_logical_errors(circuit, num_shots) -> int:
+    # Sample the circuit.
+    sampler = circuit.compile_detector_sampler()
+    detection_events, observable_flips = sampler.sample(num_shots, separate_observables=True)
+
+    # Configure a decoder using the circuit.
+    detector_error_model = circuit.detector_error_model(decompose_errors=True)
+    matcher = pymatching.Matching.from_detector_error_model(detector_error_model)
+
+    # Run the decoder.
+    predictions = matcher.decode_batch(detection_events)
+
+    # Count the mistakes.
+    num_errors = 0
+    for shot in range(num_shots):
+        actual_for_shot = observable_flips[shot]
+        predicted_for_shot = predictions[shot]
+        if not np.array_equal(actual_for_shot, predicted_for_shot):
+            num_errors += 1
+    return num_errors

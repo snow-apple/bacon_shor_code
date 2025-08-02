@@ -77,7 +77,7 @@ It will be AND-ed with the grid given and then the resulting grid will be XORed.
 Tis functoin vectorizes this so that we can check do this for all stabs in stabilizers'''
 def check_stabilizer(grid, stab):
     result = np.bitwise_and(grid, stab)
-    return  np.bitwise_xor.reduce(result.flatten())
+    return  np.bitwise_xor.reduce(result.flatten()) 
 
     
 '''takes in grid and a list of positions where to place y logicals
