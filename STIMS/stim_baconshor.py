@@ -1,126 +1,76 @@
 import numpy as np
 import pymatching
 import stim
+
 '''params: distance d, probabilty of error p, list of positions(starting from 0) to 
 place Y errors with probability p
 X stabilizers and gauges are vertical along columns
 Z stabilizers and gauges are horizontal along rows
 constructs the circuit for the BS code with the normal measurement schedule'''
-def construct_circuit(d, p, positions):
-    circuit = """R"""
-    #add data qubits
-    data_qubits = ""
-    for i in range(d**2):
-        data_qubits += f" {i}"
-    circuit += data_qubits
+def bacon_shor_circuit(d,p):
+    cirq = stim.Circuit()
+
+    # Create the initial qubits - spacial coordinates
+    for row in range(d):
+        for col in range(d):
+            cirq.append("QUBIT_COORDS", d*row + col, (col, row , 0))
+            cirq.append("H", d*row + col)
+
     
-    #add measurement qubits
-    measurement_qubits = ""
-    circuit += "\nR"
-    for i in range(d*(d-1)*2):
-        measurement_qubits += f" {i+d**2}"
-    circuit += measurement_qubits
+    cirq.append("TICK")
 
-    #add Y errors with prob p
-    circuit += "\n"
-    circuit += f"\nY_ERROR({p})"
-    for index in positions:
-        circuit += f" {index}"
+    #Measure ZZ checks along rows
+    for row in range(d-1):
+        for col in range(d):
+            cirq.append("MZZ", [d*row + col, d*(row+1) + col]) 
+        cirq.append("TICK")
+        
 
-    #Measure Z gauges
-    circuit += "\n"
-    circuit += "\n"
-    ancilla = d**2
-    detector_count = 0
-    detector = ""
-    for i in range(d):
-        detector += f" rec[-{i+1}]"
-    for j in range(d-1):
-        for i in range(d):
-            circuit += f"\nCX {i%d +j*d} {ancilla}"
-            circuit += f"\nCX {i%d +(j+1)*d} {ancilla}"
-            circuit += f"\nM {ancilla}\n"
-            ancilla += 1
-        circuit += "\n"
-        circuit += f"DETECTOR({detector_count})"
-        circuit += detector
-        detector_count += 1 
-        circuit += "\n"
+    # Measure XX checks along columns
+    for col in range(d-1):
+        for row in range(d):
+            cirq.append("MXX", [d*row + col, d*row + col+1]) 
+        cirq.append("TICK")
 
-    #Measure X gauges
-    circuit += "\n"
+
+    # Add Y errors on all qubits with probability p
+    for row in range(d):
+        for col in range(d):
+            cirq.append("Y_ERROR", d*row + col, p)
+    # cirq.append("Y_ERROR", 1, p)
+
+
+    #Measure ZZ checks along rows
+    for row in range(d-1):
+        for col in range(d):
+            cirq.append("MZZ", [d*row + col, d*(row+1) + col]) 
+        cirq.append("TICK")
+
+        cirq.append("DETECTOR", [stim.target_rec(-1),stim.target_rec(-2),stim.target_rec(-3),stim.target_rec(-13),stim.target_rec(-14),stim.target_rec(-15)], arg = (col+0.5,d/2,0))
+
     
-    for j in range(d-1):
-        for i in range(d):
-            circuit += f"\nH {ancilla}"
-            circuit += f"\nCX {ancilla} {i*d +j}"
-            circuit += f"\nCX {ancilla} {i*d +j+1}"
-            circuit += f"\nH {ancilla}"
-            circuit += f"\nM {ancilla}\n"
-            ancilla += 1
-        circuit += "\n"
-        circuit += f"DETECTOR({detector_count})"
-        circuit += detector
-        detector_count += 1 
-        circuit += "\n"
-    return circuit
+    # Measure XX checks along columns
+    for col in range(d-1):
+        for row in range(d):
+            cirq.append("MXX", [d*row + col, d*row + col+1]) 
+        cirq.append("TICK")
 
-import stim
-import numpy as np
+        #Add detectors for the X checks
+        cirq.append("DETECTOR", [stim.target_rec(-1),stim.target_rec(-2),stim.target_rec(-3),stim.target_rec(-13),stim.target_rec(-14),stim.target_rec(-15)], arg = (col+0.5,d/2,0))
 
-def construct_circuit_corrected(d, p):
-    circuit = stim.Circuit()
+    # Add observables for the logical X and Z operators
 
-    data_qubits = list(range(d * d))
-    ancilla_qubits = list(range(d * d, d * d + 2 * d * (d - 1)))
-    
-    # Initialize all qubits
-    circuit.append("R", data_qubits + ancilla_qubits)
-    
-    # Add an X error to a specific qubit for testing
-    circuit.append("X_ERROR", [1], p=p)
+    # Track logical X along the first row (horizontal)
+    for col in range(d):
+        cirq.append("OBSERVABLE_INCLUDE", [d*0+col], "X")
 
-    # Z-gauge measurements
-    ancilla_start = d * d
-    
-    # For each row of Z-stabilizers
-    for j in range(d - 1):
-        for i in range(d):
-            ancilla_qubit = ancilla_start + j * d + i
-            circuit.append("H", [ancilla_qubit])
-            circuit.append("CZ", [i + j * d, ancilla_qubit])
-            circuit.append("CZ", [i + (j + 1) * d, ancilla_qubit])
-            circuit.append("H", [ancilla_qubit])
-            circuit.append("M", [ancilla_qubit])
-            
-            # The detector checks the measurement outcome
-            # This is where the old code went wrong. We must
-            # define the detector immediately after the measurement.
-            circuit.append("DETECTOR", [stim.target_rec(-1)])
-
-    # X-gauge measurements
-    ancilla_start_x = d * d + d * (d - 1)
-    
-    for j in range(d - 1):
-        for i in range(d):
-            ancilla_qubit = ancilla_start_x + j * d + i
-            circuit.append("H", [ancilla_qubit])
-            circuit.append("CX", [ancilla_qubit, i * d + j])
-            circuit.append("CX", [ancilla_qubit, i * d + j + 1])
-            circuit.append("H", [ancilla_qubit])
-            circuit.append("M", [ancilla_qubit])
-            
-            # Define detector for this measurement
-            circuit.append("DETECTOR", [stim.target_rec(-1)])
-            
-    # Measure logical operators to determine success
-    # This is a key step that was missing in your original code
-    circuit.append("M", [0], "observable")
-
-    return circuit
+    # Track logical Z along the first column (vertical)
+    for row in range(d):
+        cirq.append("OBSERVABLE_INCLUDE", [d * row + 0], "Z")
+    return cirq
    
-def run(d, p, positions, shots):
-    circuit = construct_circuit(d, p, positions)
+def run(d, p, shots):
+    circuit = bacon_shor_circuit(d, p)
     sampler = circuit.compile_detector_sampler()
     samples = sampler.sample(shots=shots)
     return samples
@@ -170,22 +120,6 @@ def count_logical_errors(circuit, num_shots) -> int:
             num_errors += 1
     return num_errors
 
-def add_qubit_coords(circuit, d):
-    coords = ""
-    for i in range(d**2):
-        coords += f"\nQUBIT_COORDS({i//d}, {i%d}) {i}"
-    circuit = coords + "\n" + circuit
-    return circuit
-
-def add_ancilla_coords(circuit, d):
-    coords = ""
-    # Add coordinates for measurement qubits
-    for i in range(d*(d-1)):
-        coords += f"\nQUBIT_COORDS({i%d}, {i//d + 0.5}) {i + d**2}"
-    for i in range(d*(d-1)):
-        coords += f"\nQUBIT_COORDS({i//d + 0.5}, {i%d}) {i + d**2 + d*(d-1)}"
-    circuit = coords + "\n" + circuit
-    return circuit
 
 # #add logical operators to the circuit
 # def add_logical_operators(circuit, d):
@@ -201,75 +135,3 @@ def add_ancilla_coords(circuit, d):
     
 #     return circuit
 
-# '''
-# CX 0 21
-# CX 1 21
-# CX 2 21
-# CX 3 21
-# CX 4 21
-# M 21
-# OBSERVABLE_INCLUDE(0) rec[-1]
-
-# CX 22 0
-# CX 22 5
-# CX 22 10
-# CX 22 15
-# CX 22 20
-# H 22
-# M 22
-# OBSERVABLE_INCLUDE(1) rec[-1]
-
-#  '''
-
-
-
-def construct_circuit_corrected(d, p):
-    circuit = stim.Circuit()
-
-    data_qubits = list(range(d * d))
-    ancilla_qubits = list(range(d * d, d * d + 2 * d * (d - 1)))
-    
-    # Initialize all qubits
-    circuit.append("R", data_qubits + ancilla_qubits)
-    
-    # Add an X error to a specific qubit for testing
-    circuit.append("X_ERROR", [1], p=p)
-
-    # Z-gauge measurements
-    ancilla_start = d * d
-    
-    # For each row of Z-stabilizers
-    for j in range(d - 1):
-        for i in range(d):
-            ancilla_qubit = ancilla_start + j * d + i
-            circuit.append("H", [ancilla_qubit])
-            circuit.append("CZ", [i + j * d, ancilla_qubit])
-            circuit.append("CZ", [i + (j + 1) * d, ancilla_qubit])
-            circuit.append("H", [ancilla_qubit])
-            circuit.append("M", [ancilla_qubit])
-            
-            # The detector checks the measurement outcome
-            # This is where the old code went wrong. We must
-            # define the detector immediately after the measurement.
-            circuit.append("DETECTOR", [stim.target_rec(-1)])
-
-    # X-gauge measurements
-    ancilla_start_x = d * d + d * (d - 1)
-    
-    for j in range(d - 1):
-        for i in range(d):
-            ancilla_qubit = ancilla_start_x + j * d + i
-            circuit.append("H", [ancilla_qubit])
-            circuit.append("CX", [ancilla_qubit, i * d + j])
-            circuit.append("CX", [ancilla_qubit, i * d + j + 1])
-            circuit.append("H", [ancilla_qubit])
-            circuit.append("M", [ancilla_qubit])
-            
-            # Define detector for this measurement
-            circuit.append("DETECTOR", [stim.target_rec(-1)])
-            
-    # Measure logical operators to determine success
-    # This is a key step that was missing in your original code
-    circuit.append("M", [0], "observable")
-
-    return circuit
