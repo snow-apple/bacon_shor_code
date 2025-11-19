@@ -253,7 +253,6 @@ def bacon_shor_five_measurements(d,cirq,p, add_errors = False):
     inst = stim.CircuitInstruction(name = "DEPOLARIZE1", targets = [6,11], gate_args = [p])
     cirq.append(inst) if add_errors else None
     cirq.append("MZZ", [6,11])
-
     inst = stim.CircuitInstruction(name = "DEPOLARIZE1", targets = [13,18], gate_args = [p])
     cirq.append(inst) if add_errors else None
     cirq.append("MZZ", [13,18])
@@ -344,7 +343,7 @@ def bacon_shor_observables(d,circuit):
     #     circuit.append("MZ", [d*0 + col])
     # obs_x = [stim.target_rec(-(i+1)) for i in range(d)]
     # circuit.append("OBSERVABLE_INCLUDE", obs_x, 1)
-    # return circuit
+    return circuit
 
 def bacon_shor_apply_detector(detectors,cirq):
     cirq.append("DETECTOR", [stim.target_rec(i) for i in detectors])
@@ -361,7 +360,7 @@ def bacon_shor_circuit(d,p,add_Errors = False):
         cirq = bacon_shor_apply_detector(det,cirq)
     cirq = bacon_shor_observables(d,cirq)
     num = count_logical_errors(cirq,10)
-    print(num)
+    # print(num)
     
     return cirq
 
@@ -419,6 +418,52 @@ def plot_threshold(d=5, ps=None, num_shots=1000):
     plt.legend()
     plt.tight_layout()
     plt.show()
+
+
+def plot_low_p(d=5, ps=None, num_shots=1000):
+    if ps is None:
+        ps = np.linspace(0.00001, 0.01, 10)
+    logical_error_rates = []
+    logical_error_stds = []
+
+    for p in ps:
+        print(f"\n=== Running d={d}, p={p:.5f} ===")
+        circuit = bacon_shor_circuit(d, p, add_Errors=True)
+        num_logical_errors = count_logical_errors(circuit, num_shots)
+        logical_error_rate = num_logical_errors / num_shots
+        std = np.sqrt(logical_error_rate * (1 - logical_error_rate) / num_shots)
+        logical_error_rates.append(logical_error_rate)
+        logical_error_stds.append(std)
+
+        print(f"Logical error rate at p={p:.5f}: {logical_error_rate:.4f}")
+
+    p_last = ps[-1]
+    pl_last = logical_error_rates[-1]
+    
+    # Calculate the slope 'm' of a line from (0,0) to the last point.
+    if p_last == 0:
+        m_slope = 0
+    else:
+        m_slope = pl_last / p_last  # m = (y2 - y1) / (x2 - x1) = (pl_last - 0) / (p_last - 0)
+
+    # Create the y_fit list using this new slope 'm'
+    y_fit = [m_slope * p for p in ps]
+    fit_label = f'Fit from last point: y = {m_slope:.4f}x'
+
+
+    plt.figure(figsize=(8, 6))
+    plt.errorbar(ps, logical_error_rates, yerr=logical_error_stds, fmt='o-', capsize=4, label=f'd={d}')
+    plt.plot(ps, y_fit, label=fit_label, color='red', linestyle='--')
+    plt.xscale('log')
+    plt.yscale('log')
+    plt.xlabel("Physical error rate p")
+    plt.ylabel("Logical error rate p_L")
+
+    plt.title("Bacon–Shor Logical Error Rate vs Physical Error Rate")
+    plt.grid(True, which="both")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
 # #use the noise model from stim_baconshor.py to add errors
 
 
@@ -428,3 +473,22 @@ def plot_threshold(d=5, ps=None, num_shots=1000):
 #put measurement noise - decode using pymatching for x/z
 #convert measurement scheduole into a programmatic form
 #genealize for higher d
+
+
+
+
+#To Dos: 10/22
+#get sinter to work
+#build rep code and look at slope for that - DONE
+#what should slope be for rep code? - realted to P_L equation - DONE
+# same for bacon shor?
+
+
+#plot for low p - up to 10^-5 
+#What should the slope be?
+
+#why plot platueing at the end?
+
+
+
+#

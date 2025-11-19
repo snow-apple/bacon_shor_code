@@ -78,6 +78,31 @@ def sinter_plot(collected_samples, d, title, errorbars = False):
             y = np.array(data['pl_values'])[sorter]
             y_err = np.array(data['std_errors'])[sorter]
 
+            fit_indices = np.where(x < 0.01)
+            x_fit = x[fit_indices]
+            y_fit = y[fit_indices]
+            if len(x_fit) > 1:
+                # 3. Convert to log-space
+                log_x = np.log10(x_fit)
+                log_y = np.log10(y_fit)
+                
+                # 4. Perform the 1st-degree (linear) fit
+                #    coeffs[0] is the slope (k), coeffs[1] is the intercept
+                coeffs = np.polyfit(log_x, log_y, 1)
+                slope = coeffs[0]
+                intercept = coeffs[1]
+                
+                # Print the measured slope
+                expected_k = np.ceil(d / 2)
+                print(f"d={d}: Measured Slope k = {slope:.4f} (Expected: {expected_k})")
+                
+                # 5. Create the fitted line data for plotting
+                #    (Use all x_data to draw the line across the whole plot)
+                y_fit_line = 10**(slope * np.log10(x) + intercept)
+                
+                # 6. Plot the fitted line
+                plt.plot(x, y_fit_line, '--', label=f"Fit $d={d}$ (slope={slope:.2f})")
+
 
             plt.errorbar( x,y, yerr=y_err, fmt='o-',capsize=5,label=f"Distance $d={d}$" )
         plt.xscale('log')
