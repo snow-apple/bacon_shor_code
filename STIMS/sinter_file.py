@@ -149,10 +149,10 @@ def sinter_plot(collected_samples, d, title, errorbars = False):
         plt.show()
 
 
-def run_bacon_shor_simulation(physerrorprobs):
+def run_bacon_shor_simulation(physerrorprobs, numrounds):
     tasks = []
     for p in physerrorprobs:
-        circuit = bacon_shor_circuit(5, p, add_Errors=True)
+        circuit = bacon_shor_circuit(5, p, numrounds, add_Errors=True)
         
         # Add the task to Sinter's list
         tasks.append(sinter.Task(
@@ -160,6 +160,7 @@ def run_bacon_shor_simulation(physerrorprobs):
                 json_metadata={
                     'd': 5,
                     'p': p,
+                    'rounds': numrounds,
                 }
             ))
     print(f"Generated {len(tasks)} tasks.")
