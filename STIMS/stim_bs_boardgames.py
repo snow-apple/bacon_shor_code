@@ -328,15 +328,59 @@ def bacon_shor_detectors():
 
     return detectors
 
+def final_round_detectors():
+    #use same detectors as before but account for the shift in 25 of the measured qubits at the end of the circuit
+    detectors = []
+    #x detectors 
+    detectors.append([-48-25,-47-25,-46-25,-24-25,-25,-24,-20,-19,-15,-14,-10,-9])
+    detectors.append([-45-25,-44-25,-24-25,-5,-4])
+    detectors.append([-23-25,-22-25,-21-25,-20-25,-24,-23,-19,-18,-14,-13,-9,-8])
+    detectors.append([-19-25,-4,-3])
+    detectors.append([-18-25,-23,-22])
+    detectors.append([-17-25,-16-25,-15-25,-14-25,-18,-17,-13,-12,-8,-7,-3,-2])
+    detectors.append([-41-25,-40-25,-13-25,-22,-21])
+    detectors.append([-39-25,-38-25,-37-25,-13-25,-17,-16,-12,-11,-7,-6,-2,-1])
+
+    # #z detectors
+
+    # detectors.append([-83-25,-82-25,-81-25,-80-25,-60-25,-34-25,-33-25,-32-25,-24,-19,-23,-18,-22,-17,-21,-16])
+    # detectors.append([-84-25,-60-25,-36-25,-35-25,-25,-20,-24,-19])
+    # detectors.append([-57-25,-56-25,-55-25,-31-25,-10-25,-9-25,-8-25,-7-25,-18,-13,-17,-12,-16,-11])
+    # detectors.append([-59-25,-58-25,-31-25,-11-25,-20,-15,-19,-14])
+
+    # detectors.append([-51-25,-50-25,-30-25,-2-25,-12,-7,-11,-6])
+    # detectors.append([-54-25,-53-25,-52-25,-30-25,-6-25,-5-25,-4-25,-3-25,-15,-10,-14,-9,-13,-8])
+    # detectors.append([-73-25,-49-25,-26-25,-25-25,-7,-2,-6,-1])
+    # detectors.append([-77-25,-76-25,-75-25,-74-25,-49-25,-29-25,-28-25,-27-25,-10,-5,-9,-4,-8,-3,-7,-2])
+    return detectors
+
+
+
 def bacon_shor_observables(d,circuit):
+    all_qubits = range(d * d)
+    circuit.append("MX", all_qubits)
+
+    obs_targets = []
+    for row in range(d):
+        qubit_index = row * d  # 0, 5, 10...
+        
+        # Convert qubit index to record offset
+        # Offset = qubit_index - total_num_qubits
+        offset = qubit_index - (d * d)
+        
+        obs_targets.append(stim.target_rec(offset))
+
+    # 3. DEFINE THE OBSERVABLE
+    circuit.append("OBSERVABLE_INCLUDE", obs_targets, 0)
+
     # Logical X: measured along a row (horizontal)
     # Logical Z: measured along a column (vertical)
 
     # Logical X observable - measure Z along first column
-    for row in range(d):
-        circuit.append("MX", [d*row + 0])
-    obs_z = [stim.target_rec(-(i+1)) for i in range(d)]
-    circuit.append("OBSERVABLE_INCLUDE", obs_z, 0)
+    # for row in range(d):
+    #     circuit.append("MX", [d*row + 0])
+    # obs_z = [stim.target_rec(-(i+1)) for i in range(d)]
+    # circuit.append("OBSERVABLE_INCLUDE", obs_z, 0)
 
     # # Logical Z observable - measure X along first row
     # for col in range(d):
@@ -350,16 +394,23 @@ def bacon_shor_apply_detector(detectors,cirq):
     return cirq
 
 
-def bacon_shor_circuit(d,p,add_Errors = False):
+def bacon_shor_circuit(d,p,rounds, add_Errors = False):
     cirq = bacon_shor_five_initialization(d)
 
     detectors = bacon_shor_detectors()
-    cirq = bacon_shor_five_measurements(d,cirq,p,add_Errors)
-    for det in detectors:
+
+    for _ in range(rounds):
+
+        cirq = bacon_shor_five_measurements(d,cirq,p,add_Errors)
+        for det in detectors:
         # cirq = bacon_shor_five_measurements(d,cirq)
-        cirq = bacon_shor_apply_detector(det,cirq)
+            cirq = bacon_shor_apply_detector(det,cirq)
     cirq = bacon_shor_observables(d,cirq)
-    num = count_logical_errors(cirq,10)
+
+    final_detectors = final_round_detectors()
+    for det in final_detectors:
+        cirq = bacon_shor_apply_detector(det,cirq)
+    # num = count_logical_errors(cirq,10)
     # print(num)
     
     return cirq
