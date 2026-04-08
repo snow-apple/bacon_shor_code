@@ -1,6 +1,10 @@
+from random import random
+
 import stim
 import pymatching
 import numpy as np
+
+from stim_baconshor import bacon_shor_circuit_manual_errors
 
 # def split_circuit_into_XZ(original_circuit):
 #     circuit_X = stim.Circuit()
@@ -37,7 +41,7 @@ def edge_coordinate_map(circuit):
             coords = tuple(instruction.gate_args_copy())
             for t in instruction.targets_copy():
                 qubit_coords[t.value] = coords
-    print(f"Qubit coordinates: {qubit_coords}")
+    # print(f"Qubit coordinates: {qubit_coords}")
     
     #explains what every single Edge ID actually corresponds to physically in our circuit
     #index = edge_id
@@ -50,7 +54,7 @@ def edge_coordinate_map(circuit):
             continue
         first_cause = explained_err.circuit_error_locations[0]
         targets = first_cause.instruction_targets.targets_in_range
-        print(f"Edge ID {edge_id} corresponds to targets: {targets}")
+        # print(f"Edge ID {edge_id} corresponds to targets: {targets}")
 
         #extract location of qubits envolved in this error
         locations = []
@@ -175,3 +179,168 @@ def intersection(z_error_locations, x_error_locations):
     print(f"Found {len(y_errors)} Y-Errors at: {y_errors}")
     return y_errors
 
+#--Functions for Parity Matching with Pymatching Static Schedule--
+'''returns the weight of the solution found by PyMatching and the weight of the alternate solution, 
+as well as what the alternate solution actually is'''
+def get_all_solutions(d, x_edges, z_edges):
+    weight_py_solution_x = len(z_edges)
+    # print(f"Weight of PyMatching solution on X graph: {weight_py_solution_x}")
+    weight_py_solution_z = len(x_edges)
+    # print(f"Weight of PyMatching solution on Z graph: {weight_py_solution_z}")
+    weight_alternate_solution_x = d - weight_py_solution_x
+    weight_alternate_solution_z = d - weight_py_solution_z
+
+    current_x = [set(edge) for edge in z_edges]
+    current_z = [set(edge) for edge in x_edges]
+    # print(f"Current X graph: {current_x}")
+    # print(f"Current Z graph: {current_z}")
+
+    #create set with all possible edges on Z graph
+    all_z_edges = []
+    for i in range(d-2):
+        all_z_edges.append({i, i+1})
+    all_z_edges.append({-1, 0}) #add boundary edge
+    all_z_edges.append({-1, d-2}) #add boundary edge
+    # print(f"All possible edges on Z graph: {all_z_edges}")
+
+    #create set with all possible edges on X graph
+    all_x_edges = []
+    for i in range(d-1, 2*d-3):
+        all_x_edges.append({i, i+1})
+    all_x_edges.append({-1, d-1}) #add boundary edge
+    all_x_edges.append({-1, 2*d-3}) #add boundary edge
+
+    alternate_x_solution = [edge for edge in all_x_edges if edge not in current_x]
+    alternate_z_solution = [edge for edge in all_z_edges if edge not in current_z]
+
+    dict_X = {}
+    dict_X[weight_py_solution_x] = current_x
+    dict_X[weight_alternate_solution_x] = alternate_x_solution
+    dict_Z = {}
+    dict_Z[weight_py_solution_z] = current_z
+    dict_Z[weight_alternate_solution_z] = alternate_z_solution
+
+    return dict_X, dict_Z
+
+def choose_lowest_weight_parity(dict_X, dict_Z):
+    even_x = sum(w for w in dict_X if w % 2 == 0)
+    odd_x  = sum(w for w in dict_X if w % 2 != 0)
+
+    even_z = sum(w for w in dict_Z if w % 2 == 0)
+    odd_z  = sum(w for w in dict_Z if w % 2 != 0)
+    
+    even_solution = even_x + even_z
+    odd_solution = odd_x + odd_z
+
+    if even_solution < odd_solution:
+        # print(f"Choosing even solution with weight {even_x}, {even_z}")
+        return dict_X[even_x], dict_Z[even_z]
+    else: #odd_solution < even_solution:
+        # print(f"Choosing odd solution with weight {odd_x}, {odd_z}")
+        return dict_X[odd_x], dict_Z[odd_z]
+    
+'''check if the solution found by PyMatching is correct by seeing if the edges
+     it found correspond to the actual error locations, the intersection
+     y error locations: a list of where Y errors are located'''
+def did_pass(d, x_graph_solution, z_graph_solution, y_error_locations):
+    #get the rows and columns of the original y error locations 
+    #the rows correspond to the Z graph and the columns correspond to the X graph
+    y_rows = set()
+    y_cols = set()
+    for location in y_error_locations:
+        y_rows.add(location // d)
+        y_cols.add(location % d)
+    # print(f"Y errors are located in rows {y_rows} and columns {y_cols}")
+
+    x_edges_dict, z_edges_dict = map_edges_to_rowcol(d)
+    x_graph_locations = set()
+    for edge in x_graph_solution:
+        if edge in x_edges_dict.values():
+            keys = [k for k, v in x_edges_dict.items() if v == edge]
+            x_graph_locations.add(keys[0]) #there should only be one key that corresponds to this edge, but we have to put it in a list to get it out of the dictionary
+    
+    z_graph_locations = set()
+    for edge in z_graph_solution:
+        if edge in z_edges_dict.values():
+            keys = [k for k, v in z_edges_dict.items() if v == edge]
+            z_graph_locations.add(keys[0]) #there should only be one key that corresponds to this edge, but we have to put it in a list to get it out of the dictionary
+    
+    # print("Z graph solution corresponds to rows: ", z_graph_locations)
+    # print("X graph solution corresponds to columns: ", x_graph_locations)
+
+    if z_graph_locations == y_rows and x_graph_locations == y_cols:
+        # print("PASS: ParityMatching solution is correct!")
+        return True
+    else:        
+        # print("FAIL: ParityMatching solution is incorrect.")
+        return False
+
+    
+
+    
+
+
+'''map the edges found to the row and column they correspond to in the Bacon-Shor code'''
+def map_edges_to_rowcol(d):
+    ##create set with all possible edges on Z graph
+    #create set with all possible edges on Z graph
+    z_edges_dict = {}
+    for i in range(d-2):
+        z_edges_dict[i+1] = {i, i+1}
+    z_edges_dict[0] = {-1, 0} #add boundary edge
+    z_edges_dict[d-1] = {-1, d-2} #add boundary edge
+    # print(f"All possible edges on Z graph: {z_edges_dict}")
+
+    #create set with all possible edges on X graph
+    x_edges_dict = {}
+    for i in range(d-1, 2*d-3):
+        x_edges_dict[i-d+2] = {i, i+1}
+    x_edges_dict[0] = {-1, d-1} #add boundary edge
+    x_edges_dict[d-1] = {-1, 2*d-3} #add boundary edge
+    # print(f"All possible edges on X graph: {x_edges_dict}")
+    return x_edges_dict, z_edges_dict
+
+# '''map the edges found to the row and column they correspond to in the Bacon-Shor code'''
+# def map_rowcol_to_edges(d):
+
+#     #create set with all possible edges on Z graph
+#     z_edges_dict = {}
+#     for i in range(d - 2):
+#         z_edges_dict[frozenset({i, i + 1})] = i + 1
+#     z_edges_dict[frozenset({-1, 0})] = 0
+#     z_edges_dict[frozenset({-1, d - 2})] = d - 1
+
+#     # create set with all possible edges on X graph
+#     x_edges_dict = {}
+#     for i in range(d - 1, 2 * d - 3):
+#         x_edges_dict[frozenset({i, i + 1})] = i - d + 2
+#     x_edges_dict[frozenset({-1, d - 1})] = 0
+#     x_edges_dict[frozenset({-1, 2 * d - 3})] = d - 1
+    
+#     return x_edges_dict, z_edges_dict
+
+
+def run(d, error_positions):
+    circuit = bacon_shor_circuit_manual_errors(d=d, error_positions=error_positions)
+    x_edges, z_edges= matching(circuit)
+    dict_X, dixt_Z = get_all_solutions(d, x_edges, z_edges)
+    x_graph_solution, z_graph_solution = choose_lowest_weight_parity(dict_X, dixt_Z)
+    outcome = did_pass(d, x_graph_solution, z_graph_solution, error_positions)
+    return outcome
+
+"""Returns a list of qubit indices that suffered an error based on probability p."""
+def generate_random_errors(d, p):
+    # This creates an array of d^2 random numbers and returns the indices where they are < p
+    probs = np.random.rand(d**2)
+    errors = np.where(probs < p)[0].tolist()
+    return errors
+
+def get_logical_error_rate(d, p, num_shots=10):
+    logical_errors = 0
+    for _ in range(num_shots):
+        error_positions = generate_random_errors(d, p)
+        # We simulate the circuit and run parity matching pipeline
+        if not run(d, error_positions):
+            logical_errors += 1
+    
+    return logical_errors / num_shots
